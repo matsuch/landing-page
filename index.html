@@ -213,14 +213,15 @@
 
         .feature-card {
             background: white;
-            padding: 40px;
+            padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 10px 40px rgba(26, 77, 58, 0.1);
             transition: all 0.3s ease;
             border: 1px solid rgba(26, 77, 58, 0.05);
-            min-width: 300px;
+            min-width: 280px;
             flex: 0 0 auto;
+            margin: 0 10px;
         }
 
         .feature-card:hover {
@@ -926,26 +927,28 @@
     </div>
 
     <script>
-        // Carousel Implementation
         let currentIndex = 0;
-        
+
         function moveCarousel(direction) {
             const carouselTrack = document.querySelector('.carousel-track');
             const totalCards = document.querySelectorAll('.feature-card').length;
-            const cardWidth = document.querySelector('.feature-card').offsetWidth;
+            const cardWidth = document.querySelector('.feature-card').offsetWidth + 20;
             currentIndex += direction;
-            
+
             if (currentIndex < 0) {
                 currentIndex = totalCards - 1;
             } else if (currentIndex >= totalCards) {
                 currentIndex = 0;
             }
-            
+
             const newTranslateX = -currentIndex * cardWidth;
             carouselTrack.style.transform = `translateX(${newTranslateX}px)`;
         }
-        
-        // Pricing-Animation
+
+        setInterval(() => {
+            moveCarousel(1);
+        }, 3000);
+
         function selectPlan(planElement) {
             document.querySelectorAll('.plan').forEach(plan => {
                 plan.style.outline = '';
@@ -953,7 +956,6 @@
             planElement.style.outline = '2px solid green';
         }
 
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -963,7 +965,6 @@
             });
         });
 
-        // Fade in animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -981,7 +982,6 @@
             observer.observe(el);
         });
 
-        // Add some interactive elements
         document.querySelectorAll('.feature-card').forEach(card => {
             card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
@@ -992,39 +992,28 @@
             });
         });
 
-        // CTA button interactions
         document.querySelectorAll('.hero-cta, .cta-button').forEach(button => {
             button.addEventListener('click', function (e) {
-                // Add click animation
                 this.style.transform = 'scale(0.95)';
                 setTimeout(() => {
                     this.style.transform = 'scale(1)';
                 }, 150);
-
-                // You can add your conversion tracking or redirect logic here
                 console.log('CTA clicked - redirect to purchase/contact form');
             });
         });
 
-        // Detectar dispositivo móvel
         function isMobile() {
             return window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
 
-        // Aplicar comportamentos específicos para mobile
         if (isMobile()) {
             document.body.classList.add('mobile-device');
-
-            // Desabilitar animações pesadas no mobile
             document.querySelectorAll('.floating-circle').forEach(circle => {
                 circle.style.animation = 'none';
             });
-
-            // Otimizar scroll no mobile
             document.documentElement.style.scrollBehavior = 'smooth';
         }
 
-        // Prevenção de zoom duplo no iOS
         let lastTouchEnd = 0;
         document.addEventListener('touchend', function (event) {
             const now = (new Date()).getTime();
@@ -1034,10 +1023,8 @@
             lastTouchEnd = now;
         }, false);
 
-        // Melhorar performance no scroll mobile
         let ticking = false;
         function updateScrollElements() {
-            // Código de scroll otimizado
             ticking = false;
         }
 
@@ -1081,12 +1068,12 @@
         const closeBtn = document.querySelector(".close");
 
         openModalLink.addEventListener("click", (event) => {
-            event.preventDefault(); // Evita rolar para #cta
+            event.preventDefault();
             modal.style.display = "block";
         });
 
         openModalLinkHero.addEventListener("click", (event) => {
-            event.preventDefault(); // Evita rolar para #cta
+            event.preventDefault();
             modal.style.display = "block";
         });
 

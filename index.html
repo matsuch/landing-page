@@ -255,8 +255,8 @@
         }
 
         .benefits-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
             gap: 60px;
             align-items: center;
         }
@@ -400,7 +400,7 @@
             }
 
             .benefits-content {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 gap: 40px;
                 text-align: left;
             }

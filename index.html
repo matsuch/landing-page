@@ -241,7 +241,7 @@
         .carousel-track {
             display: flex;
             animation: scroll 30s linear infinite;
-            width: calc(200px * 12); /* Adjust this value */
+            width: calc(200px * 12);
             background-color: #b8e6d3;
         }
 
@@ -411,6 +411,17 @@
                 margin: 0 10px;
                 width: 200px;
                 height: 200px;
+                flex: 0 0 auto;
+            }
+
+            .carousel-track {
+                width: 100%;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+            }
+
+            .feature-card {
+                scroll-snap-align: center;
             }
 
             .feature-card h3 {
@@ -419,6 +430,10 @@
 
             .feature-card p {
                 font-size: 1rem;
+            }
+
+            .carousel-button {
+                display: none;
             }
 
             .benefits {

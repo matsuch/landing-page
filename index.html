@@ -208,7 +208,6 @@
         }
 
         .slider {
-            background: #f8faf7;
             box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
             height: 300px;
             max-width: 100%;
@@ -219,7 +218,6 @@
 
         .slider::before,
         .slider::after {
-            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
             content: "";
             height: 100px;
             position: absolute;
@@ -241,7 +239,7 @@
         .carousel-track {
             display: flex;
             animation: scroll 30s linear infinite;
-            width: calc(200px * 12);
+            width: calc(200px * 12); /* Adjust this value */
             background-color: #b8e6d3;
         }
 
@@ -271,7 +269,7 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 20px;
-            background: linear-gradient(45deg, #1a4d3a, #4a7c59);
+            background: #1a4d3a;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -411,17 +409,6 @@
                 margin: 0 10px;
                 width: 200px;
                 height: 200px;
-                flex: 0 0 auto;
-            }
-
-            .carousel-track {
-                width: 100%;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-            }
-
-            .feature-card {
-                scroll-snap-align: center;
             }
 
             .feature-card h3 {
@@ -430,10 +417,6 @@
 
             .feature-card p {
                 font-size: 1rem;
-            }
-
-            .carousel-button {
-                display: none;
             }
 
             .benefits {
@@ -602,17 +585,6 @@
 
         .pulse {
             animation: pulse 2s infinite;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .highlight-green {
@@ -862,74 +834,74 @@
             <h2 class="section-title">Porque você deve automatizar o seu atendimento?</h2>
             <div class="carousel slider">
                 <div class="carousel-track">
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">🤖</div>
                         <h3>IA Superinteligente</h3>
                         <p>Tecnologia de ponta que entende qualquer pergunta e resolve qualquer problema instantaneamente.
                         </p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">💬</div>
                         <h3>Integração WhatsApp</h3>
                         <p>Funciona direto no WhatsApp Business, a plataforma que seus clientes já usam todos os dias.</p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">🔥</div>
                         <h3>Atendimento 24/7</h3>
                         <p>Nunca mais perca uma venda. Atendimento automático e inteligente 24 horas por dia, 7 dias por
                             semana.
                         </p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">📈</div>
                         <h3>Vendas Automáticas</h3>
                         <p>Converte leads em vendas automaticamente, aumentando seu faturamento sem esforço adicional.
                         </p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">⚡</div>
                         <h3>Resposta Instantânea</h3>
                         <p>Respostas em tempo real.
                             <br>Eficiência que eleva a percepção da sua marca.
                         </p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">🎯</div>
                         <h3>Personalização Total</h3>
                         <p>Chatbot atualizado para seu negócio, com sua linguagem e seus processos.</p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">🤖</div>
                         <h3>IA Superinteligente</h3>
                         <p>Tecnologia de ponta que entende qualquer pergunta e resolve qualquer problema instantaneamente.
                         </p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">💬</div>
                         <h3>Integração WhatsApp</h3>
                         <p>Funciona direto no WhatsApp Business, a plataforma que seus clientes já usam todos os dias.</p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">🔥</div>
                         <h3>Atendimento 24/7</h3>
                         <p>Nunca mais perca uma venda. Atendimento automático e inteligente 24 horas por dia, 7 dias por
                             semana.
                         </p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">📈</div>
                         <h3>Vendas Automáticas</h3>
                         <p>Converte leads em vendas automaticamente, aumentando seu faturamento sem esforço adicional.
                         </p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">⚡</div>
                         <h3>Resposta Instantânea</h3>
                         <p>Respostas em tempo real.
                             <br>Eficiência que eleva a percepção da sua marca.
                         </p>
                     </div>
-                    <div class="feature-card fade-in">
+                    <div class="feature-card">
                         <div class="feature-icon">🎯</div>
                         <h3>Personalização Total</h3>
                         <p>Chatbot atualizado para seu negócio, com sua linguagem e seus processos.</p>
@@ -1047,10 +1019,6 @@
                 }
             });
         }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
 
         document.querySelectorAll('.feature-card').forEach(card => {
             card.addEventListener('mouseenter', function () {

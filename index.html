@@ -207,10 +207,41 @@
             margin: 15px;
         }
 
+        .slider {
+            background: #f8faf7;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+            height: 300px;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider::before,
+        .slider::after {
+            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            content: "";
+            height: 100px;
+            position: absolute;
+            width: 200px;
+            z-index: 2;
+        }
+
+        .slider::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+
+        .slider::before {
+            left: 0;
+            top: 0;
+        }
+
         .carousel-track {
             display: flex;
-            transition: transform 0.5s ease;
-            margin: 15px;
+            animation: scroll 40s linear infinite;
+            width: calc(300px * 12); /* Adjust this value */
         }
 
         .feature-card {
@@ -309,6 +340,16 @@
             color: white;
             padding: 40px 0;
             text-align: center;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-300px * 6));
+            }
         }
 
         @media (max-width: 768px) {
@@ -803,35 +844,66 @@
     <section class="features">
         <div class="container">
             <h2 class="section-title">Porque você deve automatizar o seu atendimento?</h2>
-            <div class="carousel">
-                <button class="carousel-button carousel-button--left" onclick="moveCarousel(-1)">‹</button>
+            <div class="carousel slider">
                 <div class="carousel-track">
                     <div class="feature-card fade-in">
                         <div class="feature-icon">🤖</div>
                         <h3>IA Superinteligente</h3>
-                        <p>Tecnologia de ponta que entende qualquer pergunta e resolve qualquer problema
-                            instantaneamente.
+                        <p>Tecnologia de ponta que entende qualquer pergunta e resolve qualquer problema instantaneamente.
                         </p>
                     </div>
                     <div class="feature-card fade-in">
                         <div class="feature-icon">💬</div>
                         <h3>Integração WhatsApp</h3>
-                        <p>Funciona direto no WhatsApp Business, a plataforma que seus clientes já usam
-                            todos os dias.</p>
+                        <p>Funciona direto no WhatsApp Business, a plataforma que seus clientes já usam todos os dias.</p>
                     </div>
                     <div class="feature-card fade-in">
                         <div class="feature-icon">🔥</div>
                         <h3>Atendimento 24/7</h3>
-                        <p>Nunca mais perca uma venda. Atendimento automático e inteligente 24 horas por
-                            dia, 7 dias por
+                        <p>Nunca mais perca uma venda. Atendimento automático e inteligente 24 horas por dia, 7 dias por
                             semana.
                         </p>
                     </div>
                     <div class="feature-card fade-in">
                         <div class="feature-icon">📈</div>
                         <h3>Vendas Automáticas</h3>
-                        <p>Converte leads em vendas automaticamente, aumentando seu faturamento sem
-                            esforço adicional.
+                        <p>Converte leads em vendas automaticamente, aumentando seu faturamento sem esforço adicional.
+                        </p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Resposta Instantânea</h3>
+                        <p>Respostas em tempo real.
+                            <br>Eficiência que eleva a percepção da sua marca.
+                        </p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Personalização Total</h3>
+                        <p>Chatbot atualizado para seu negócio, com sua linguagem e seus processos.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🤖</div>
+                        <h3>IA Superinteligente</h3>
+                        <p>Tecnologia de ponta que entende qualquer pergunta e resolve qualquer problema instantaneamente.
+                        </p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">💬</div>
+                        <h3>Integração WhatsApp</h3>
+                        <p>Funciona direto no WhatsApp Business, a plataforma que seus clientes já usam todos os dias.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🔥</div>
+                        <h3>Atendimento 24/7</h3>
+                        <p>Nunca mais perca uma venda. Atendimento automático e inteligente 24 horas por dia, 7 dias por
+                            semana.
+                        </p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">📈</div>
+                        <h3>Vendas Automáticas</h3>
+                        <p>Converte leads em vendas automaticamente, aumentando seu faturamento sem esforço adicional.
                         </p>
                     </div>
                     <div class="feature-card fade-in">
@@ -847,7 +919,6 @@
                         <p>Chatbot atualizado para seu negócio, com sua linguagem e seus processos.</p>
                     </div>
                 </div>
-                <button class="carousel-button carousel-button--right" onclick="moveCarousel(1)">›</button>
             </div>
         </div>
     </section>
@@ -932,28 +1003,6 @@
     </div>
 
     <script>
-        let currentIndex = 0;
-
-        function moveCarousel(direction) {
-            const carouselTrack = document.querySelector('.carousel-track');
-            const totalCards = document.querySelectorAll('.feature-card').length;
-            const cardWidth = document.querySelector('.feature-card').offsetWidth + 20;
-            currentIndex += direction;
-
-            if (currentIndex < 0) {
-                currentIndex = totalCards - 1;
-            } else if (currentIndex >= totalCards) {
-                currentIndex = 0;
-            }
-
-            const newTranslateX = -currentIndex * cardWidth;
-            carouselTrack.style.transform = `translateX(${newTranslateX}px)`;
-        }
-
-        setInterval(() => {
-            moveCarousel(1);
-        }, 3000);
-
         function selectPlan(planElement) {
             document.querySelectorAll('.plan').forEach(plan => {
                 plan.style.outline = '';

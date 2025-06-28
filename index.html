@@ -18,6 +18,7 @@
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
             --transition: all 0.3s ease;
+            --whatsapp: #25d366;
         }
 
         * {
@@ -60,6 +61,13 @@
             margin-bottom: 2rem;
         }
 
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .btn {
             background-color: var(--accent);
             color: var(--text-light);
@@ -78,6 +86,26 @@
             background-color: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
         }
 
         /* Main Content */
@@ -196,6 +224,11 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         /* Scroll Animation */
@@ -217,7 +250,15 @@
         <div class="container">
             <h1>ChatBot IA & Automação</h1>
             <p>Transformamos sua empresa com soluções inteligentes e automatizadas</p>
-            <a href="#main" class="btn">Conhecer Serviços</a>
+            <div class="header-buttons">
+                <a href="#main" class="btn">Conhecer Serviços</a>
+                <a href="http://wa.me/5547988924554" class="btn btn-whatsapp" target="_blank">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2M12.05 20.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.26-2.83-1.26-4.38 0-4.54 3.7-8.24 8.24-8.24s8.24 3.7 8.24 8.24-3.69 8.24-8.23 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18s.21-1.07.14-1.18c-.06-.1-.23-.17-.48-.29"/>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
         </div>
     </header>
 

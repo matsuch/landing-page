@@ -6,21 +6,24 @@
     <title>ChatBot IA - Soluções Inteligentes</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --accent: #3b82f6;
-            --bg-light: #f8fafc;
-            --bg-dark: #1e293b;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-light: #f9fafb;
-            --border: #e2e8f0;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
-            --transition: all 0.3s ease;
+            --primary: #1a1a2e;
+            --primary-dark: #0f0f23;
+            --accent: #d4af37;
+            --accent-light: #f4e4a6;
+            --accent-dark: #b8941f;
+            --bg-light: #faf9f7;
+            --bg-dark: #1a1a2e;
+            --text-primary: #2c2c54;
+            --text-secondary: #40407a;
+            --text-light: #ffffff;
+            --border: #e8e8e8;
+            --shadow: 0 8px 25px rgba(26, 26, 46, 0.1);
+            --shadow-hover: 0 15px 35px rgba(26, 26, 46, 0.2);
+            --transition: all 0.4s ease;
             --whatsapp: #25d366;
             --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            --gradient-accent: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            --gradient-luxury: linear-gradient(135deg, #1a1a2e, #2c2c54, #d4af37);
         }
 
         * {
@@ -44,121 +47,190 @@
 
         /* Header */
         .header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: var(--gradient-luxury);
             color: var(--text-light);
-            padding: 4rem 0;
+            padding: 5rem 0;
             text-align: center;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="luxury-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(212,175,55,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23luxury-grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header > .container {
+            position: relative;
+            z-index: 2;
         }
 
         .header h1 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            font-weight: 300;
         }
 
         .header-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
 
         .btn {
-            background-color: var(--accent);
-            color: var(--text-light);
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
+            background: var(--gradient-accent);
+            color: var(--primary);
+            padding: 15px 30px;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: var(--transition);
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
         }
 
         .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+            border-color: var(--accent-light);
         }
 
         .btn-whatsapp {
-            background-color: var(--whatsapp);
+            background: linear-gradient(135deg, var(--whatsapp), #1da851);
+            color: white;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             font-weight: 700;
+            border: 2px solid var(--whatsapp);
         }
 
         .btn-whatsapp:hover {
-            background-color: #1da851;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #1da851, #16a34a);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+            transform: translateY(-3px);
+            border-color: #1da851;
         }
 
         .whatsapp-icon {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             fill: currentColor;
         }
 
         /* Main Content */
         .main {
-            padding: 4rem 0;
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--bg-light), #f5f5f5);
         }
 
         .main h2 {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--primary);
+            font-weight: 800;
+            position: relative;
+        }
+
+        .main h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
         }
 
         .service-card {
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(26, 26, 46, 0.08);
+            border: 2px solid transparent;
             transition: var(--transition);
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: var(--transition);
         }
 
         .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(26, 26, 46, 0.15);
+            border-color: var(--accent);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card h3 {
             color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
         .service-card p {
             color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         /* Mission Section - Destacada */
         .mission-section {
-            background: var(--gradient-accent);
-            margin: 4rem 0;
-            padding: 4rem 0;
+            background: var(--gradient-luxury);
+            margin: 5rem 0;
+            padding: 6rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -170,8 +242,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="luxury-pattern" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="7.5" cy="7.5" r="1" fill="rgba(212,175,55,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23luxury-pattern)"/></svg>');
+            opacity: 0.4;
         }
 
         .mission-content {
@@ -181,106 +253,128 @@
 
         .mission {
             text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 3.5rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+            backdrop-filter: blur(20px);
+            padding: 4.5rem 3rem;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 3px solid rgba(212, 175, 55, 0.3);
             transform: translateY(0);
             transition: var(--transition);
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
         }
 
         .mission::before {
-            content: '🚀';
+            content: '👑';
             position: absolute;
-            top: -20px;
+            top: -25px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 2.5rem;
-            background: var(--gradient-primary);
-            width: 60px;
-            height: 60px;
+            font-size: 3rem;
+            background: var(--gradient-accent);
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4);
+            border: 3px solid white;
         }
 
         .mission:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.2);
         }
 
         .mission-title {
             color: var(--primary);
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .mission p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
-            line-height: 1.8;
+            line-height: 1.9;
             font-weight: 500;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         .mission-highlight {
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+            background: var(--gradient-accent);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         /* Footer */
         .footer {
-            background: linear-gradient(135deg, var(--bg-dark), #334155);
+            background: var(--gradient-primary);
             color: var(--text-light);
-            padding: 4rem 0 2rem 0;
+            padding: 5rem 0 2.5rem 0;
             text-align: center;
-            border-top: 3px solid var(--primary);
+            border-top: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-pattern" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M 25 0 L 0 0 0 25" fill="none" stroke="rgba(212,175,55,0.08)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-pattern)"/></svg>');
+        }
+
+        .footer > .container {
+            position: relative;
+            z-index: 2;
         }
 
         .footer h3 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            color: var(--accent);
-            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
         }
 
         .about-text {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.2rem;
+            line-height: 1.9;
             opacity: 0.95;
             text-align: left;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-            margin-bottom: 2rem;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            border-left: 6px solid var(--accent);
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
         }
 
         .about-text strong {
-            color: var(--accent);
-            font-weight: 600;
+            color: var(--accent-light);
+            font-weight: 700;
         }
 
         .copyright {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
-            margin-top: 2rem;
-            opacity: 0.7;
-            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 2rem;
+            margin-top: 2.5rem;
+            opacity: 0.8;
+            font-size: 1rem;
         }
 
         /* Responsive */
@@ -291,7 +385,7 @@
             
             .about-text {
                 text-align: center;
-                padding: 1.5rem;
+                padding: 2rem;
             }
 
             .header-buttons {
@@ -300,33 +394,37 @@
             }
 
             .footer h3 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .mission-section {
-                padding: 2rem 0;
-                margin: 2rem 0;
+                padding: 3rem 0;
+                margin: 3rem 0;
             }
 
             .mission {
-                padding: 2.5rem 1.5rem;
-                border-radius: 16px;
+                padding: 3rem 2rem;
+                border-radius: 20px;
             }
 
             .mission-title {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
 
             .mission p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
+            }
+
+            .header {
+                padding: 4rem 0;
             }
         }
 
         /* Scroll Animation */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
 
         .fade-in.visible {
@@ -334,18 +432,27 @@
             transform: translateY(0);
         }
 
-        /* Pulse animation for mission section */
-        @keyframes pulse-glow {
+        /* Luxury pulse animation */
+        @keyframes luxury-glow {
             0%, 100% {
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
             }
             50% {
-                box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
+                box-shadow: 0 30px 60px rgba(212, 175, 55, 0.3);
             }
         }
 
         .mission {
-            animation: pulse-glow 4s ease-in-out infinite;
+            animation: luxury-glow 5s ease-in-out infinite;
+        }
+
+        /* Premium accents */
+        .service-card:nth-child(2) {
+            background: linear-gradient(135deg, #ffffff, #fefefe);
+        }
+
+        .service-card:nth-child(2):hover {
+            background: linear-gradient(135deg, #ffffff, var(--accent-light));
         }
     </style>
 </head>

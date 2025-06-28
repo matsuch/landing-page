@@ -167,50 +167,44 @@
 
         /* Footer */
         .footer {
-            background-color: var(--bg-dark);
+            background: linear-gradient(135deg, var(--bg-dark), #334155);
             color: var(--text-light);
-            padding: 3rem 0;
+            padding: 4rem 0 2rem 0;
             text-align: center;
+            border-top: 3px solid var(--primary);
         }
 
         .footer h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer > .container > p {
-            opacity: 0.8;
+            font-size: 2.2rem;
             margin-bottom: 2rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .footer-link {
             color: var(--accent);
-            text-decoration: none;
-            padding: 8px 16px;
-            border: 1px solid var(--accent);
-            border-radius: 6px;
-            transition: var(--transition);
+            font-weight: 700;
         }
 
-        .footer-link:hover {
-            background-color: var(--accent);
-            color: var(--text-light);
-            transform: scale(0.98);
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .about-text strong {
+            color: var(--accent);
+            font-weight: 600;
         }
 
         .copyright {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1rem;
+            padding-top: 1.5rem;
             margin-top: 2rem;
-            opacity: 0.6;
+            opacity: 0.7;
             font-size: 0.9rem;
         }
 
@@ -220,14 +214,18 @@
                 grid-template-columns: 1fr;
             }
             
-            .footer-links {
-                flex-direction: column;
-                align-items: center;
+            .about-text {
+                text-align: center;
+                padding: 1.5rem;
             }
 
             .header-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .footer h3 {
+                font-size: 1.8rem;
             }
         }
 
@@ -293,18 +291,20 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <h3>Vamos Conversar?</h3>
-            <p>Estamos prontos para transformar sua visão em realidade digital</p>
+            <h3>Quem somos nós</h3>
             
-            <nav class="footer-links">
-                <a href="#sobre" class="footer-link">Sobre Nós</a>
-                <a href="#servicos" class="footer-link">Serviços</a>
-                <a href="#contato" class="footer-link">Contato</a>
-                <a href="#portfolio" class="footer-link">Portfolio</a>
-            </nav>
+            <div class="about-text">
+                <p>Somos <strong>dois empreendedores apaixonados por tecnologia</strong>, nascidos e criados em Joinville - SC, a capital nacional da tecnologia e inovação. Em meio ao berço industrial catarinense, descobrimos que nossa verdadeira vocação estava em <strong>democratizar o poder da inteligência artificial para pequenas e médias empresas</strong>.</p>
+                
+                <p>Com backgrounds complementares em desenvolvimento e negócios, decidimos unir forças para criar soluções que realmente fazem a diferença. Acreditamos que <strong>toda empresa, independente do tamanho, merece ter acesso às ferramentas que as grandes corporações já utilizam</strong>.</p>
+                
+                <p>Nosso propósito vai além de desenvolver tecnologia - queremos <strong>transformar a maneira como as empresas se relacionam com seus clientes</strong>, tornando cada interação mais humana, eficiente e significativa. Cada projeto que assumimos carrega nossa paixão por inovação e nosso compromisso com o crescimento sustentável dos nossos parceiros.</p>
+                
+                <p><strong>De Joinville para o mundo, levamos o melhor da inovação catarinense direto para o seu negócio.</strong></p>
+            </div>
             
             <div class="copyright">
-                <p>&copy; 2025 ChatBot IA. Todos os direitos reservados.</p>
+                <p>&copy; 2025 ChatBot IA. Feito com ❤️ em Joinville - SC</p>
             </div>
         </div>
     </footer>

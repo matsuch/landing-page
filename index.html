@@ -19,6 +19,8 @@
             --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
             --transition: all 0.3s ease;
             --whatsapp: #25d366;
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            --gradient-accent: linear-gradient(135deg, #3b82f6, #1d4ed8);
         }
 
         * {
@@ -124,7 +126,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .service-card {
@@ -152,17 +154,90 @@
             color: var(--text-secondary);
         }
 
+        /* Mission Section - Destacada */
+        .mission-section {
+            background: var(--gradient-accent);
+            margin: 4rem 0;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .mission-content {
+            position: relative;
+            z-index: 2;
+        }
+
         .mission {
             text-align: center;
-            background-color: var(--border);
-            padding: 2rem;
-            border-radius: 12px;
-            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 3.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(0);
+            transition: var(--transition);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .mission::before {
+            content: '🚀';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            background: var(--gradient-primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .mission:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .mission-title {
+            color: var(--primary);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .mission p {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--text-primary);
+            line-height: 1.8;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .mission-highlight {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
         }
 
         /* Footer */
@@ -227,6 +302,24 @@
             .footer h3 {
                 font-size: 1.8rem;
             }
+
+            .mission-section {
+                padding: 2rem 0;
+                margin: 2rem 0;
+            }
+
+            .mission {
+                padding: 2.5rem 1.5rem;
+                border-radius: 16px;
+            }
+
+            .mission-title {
+                font-size: 1.8rem;
+            }
+
+            .mission p {
+                font-size: 1.1rem;
+            }
         }
 
         /* Scroll Animation */
@@ -239,6 +332,20 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Pulse animation for mission section */
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
+            }
+        }
+
+        .mission {
+            animation: pulse-glow 4s ease-in-out infinite;
         }
     </style>
 </head>
@@ -280,12 +387,20 @@
                     <p>Oferecemos estratégias personalizadas para transformação digital, ajudando sua empresa a se adaptar às novas tecnologias e mercados.</p>
                 </div>
             </div>
-
-            <div class="mission">
-                <p>Nosso objetivo é simples: queremos que todo empreendedor tenha acesso às mesmas ferramentas tecnológicas que as grandes empresas usam, de forma fácil e sem complicação, para fazer seu negócio crescer mais rápido.</p>
-            </div>
         </div>
     </main>
+
+    <!-- Mission Section - Nova seção destacada -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission fade-in">
+                    <h2 class="mission-title">Nossa <span class="mission-highlight">Missão</span></h2>
+                    <p>Nosso objetivo é simples: queremos que <span class="mission-highlight">todo empreendedor tenha acesso às mesmas ferramentas tecnológicas</span> que as grandes empresas usam, de forma fácil e sem complicação, para fazer seu negócio <span class="mission-highlight">crescer mais rápido</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">

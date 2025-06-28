@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Estruturada</title>
     <style>
-
-/*<!-- ========== HTML-MEIO ========== -->*/<section class="meio" id="meio"> <div class="meio-container"> <h2>Nossos Serviços</h2> <div class="meio-grid"> <div class="meio-card"> <h3>ChatBot IA</h3> <p>Desenvolvemos chatbots inteligentes que fornecem atendimento automatizado e personalizado, melhorando a experiência do usuário e otimizando o suporte ao cliente.</p> </div> <div class="meio-card"> <h3>Automação de Processos</h3> <p>Implementamos automações inteligentes que otimizam seu fluxo de trabalho e aumentam a produtividade.</p> </div> <div class="meio-card"> <h3>Consultoria Digital</h3> <p>Oferecemos orientação estratégica para transformar digitalmente seu negócio e alcançar novos patamares.</p> </div> </div> <div class="meio-content"> <p>Nossa missão é transformar ideias em soluções digitais inovadoras que impulsionam o crescimento dos nossos clientes.</p> </div> </div> </section>,/* ========== CSS VARIABLES ========== */
-:root {
+        /* ========== CSS VARIABLES ========== */
+        :root {
             /* Cores Primárias */
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
@@ -27,8 +26,10 @@
             --success-color: #10b981;
             --warning-color: #f59e0b;
             --error-color: #ef4444;
-        },/* ========== CSS GLOBAL ========== */
-* {
+        }
+
+        /* ========== CSS GLOBAL ========== */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -39,26 +40,10 @@
             line-height: 1.6;
             color: var(--text-primary);
             background-color: var(--bg-primary);
-        },/* ========== SCRIPT-TOPO ========== */
-function scrollToMeio() {
-            document.getElementById('meio').scrollIntoView({
-                behavior: 'smooth'
-            });
         }
 
-        function initTopoAnimations() {
-            const topoButton = document.querySelector('.topo-button');
-            if (topoButton) {
-                topoButton.addEventListener('mouseenter', function() {
-                    this.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.4)';
-                });
-                
-                topoButton.addEventListener('mouseleave', function() {
-                    this.style.boxShadow = 'none';
-                });
-            }
-        },/* ========== CSS-TOPO ========== */
-.topo {
+        /* ========== CSS-TOPO ========== */
+        .topo {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--text-light);
             padding: 2rem 0;
@@ -99,8 +84,10 @@ function scrollToMeio() {
         .topo-button:hover {
             background-color: var(--secondary-color);
             transform: translateY(-2px);
-        },/* ========== CSS-MEIO ========== */
-.meio {
+        }
+
+        /* ========== CSS-MEIO ========== */
+        .meio {
             background-color: var(--bg-primary);
             padding: 4rem 0;
             min-height: 60vh;
@@ -157,8 +144,10 @@ function scrollToMeio() {
             padding: 2rem;
             border-radius: 12px;
             margin-top: 2rem;
-        },/* ========== CSS-FIM ========== */
-.fim {
+        }
+
+        /* ========== CSS-FIM ========== */
+        .fim {
             background-color: var(--bg-dark);
             color: var(--text-light);
             padding: 3rem 0;
@@ -210,8 +199,10 @@ function scrollToMeio() {
             margin-top: 2rem;
             opacity: 0.6;
             font-size: 0.9rem;
-        },/* ========== CSS RESPONSIVE ========== */
-@media (max-width: 768px) {
+        }
+
+        /* ========== CSS RESPONSIVE ========== */
+        @media (max-width: 768px) {
             .topo h1 {
                 font-size: 2rem;
             }
@@ -227,15 +218,42 @@ function scrollToMeio() {
         }
     </style>
 </head>
-<body>,<!-- ========== HTML-TOPO ========== -->
-<section class="topo">
+<body>
+    <!-- ========== HTML-TOPO ========== -->
+    <section class="topo">
         <div class="topo-container">
             <h1>Bem-vindo ao Nosso Site</h1>
             <p>Uma experiência digital excepcional aguarda você</p>
             <button class="topo-button" onclick="scrollToMeio()">Explorar Conteúdo</button>
         </div>
-    </section>,<!-- ========== HTML-FIM ========== -->
-<section class="fim">
+    </section>
+
+    <!-- ========== HTML-MEIO ========== -->
+    <section class="meio" id="meio">
+        <div class="meio-container">
+            <h2>Nossos Serviços</h2>
+            <div class="meio-grid">
+                <div class="meio-card">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Criamos soluções web modernas e responsivas que atendem às necessidades do seu negócio com tecnologia de ponta.</p>
+                </div>
+                <div class="meio-card">
+                    <h3>Automação de Processos</h3>
+                    <p>Implementamos automações inteligentes que otimizam seu fluxo de trabalho e aumentam a produtividade.</p>
+                </div>
+                <div class="meio-card">
+                    <h3>Consultoria Digital</h3>
+                    <p>Oferecemos orientação estratégica para transformar digitalmente seu negócio e alcançar novos patamares.</p>
+                </div>
+            </div>
+            <div class="meio-content">
+                <p>Nossa missão é transformar ideias em soluções digitais inovadoras que impulsionam o crescimento dos nossos clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HTML-FIM ========== -->
+    <section class="fim">
         <div class="fim-container">
             <h3>Entre em Contato</h3>
             <p>Estamos prontos para ajudar você a alcançar seus objetivos digitais</p>
@@ -251,8 +269,29 @@ function scrollToMeio() {
         </div>
     </section>
 
-    <script>,/* ========== SCRIPT-MEIO ========== */
-function initMeioAnimations() {
+    <script>
+        /* ========== SCRIPT-TOPO ========== */
+        function scrollToMeio() {
+            document.getElementById('meio').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function initTopoAnimations() {
+            const topoButton = document.querySelector('.topo-button');
+            if (topoButton) {
+                topoButton.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.4)';
+                });
+                
+                topoButton.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'none';
+                });
+            }
+        }
+
+        /* ========== SCRIPT-MEIO ========== */
+        function initMeioAnimations() {
             const cards = document.querySelectorAll('.meio-card');
             
             // Intersection Observer para animações ao scroll
@@ -285,8 +324,10 @@ function initMeioAnimations() {
                     }, 200);
                 });
             });
-        },/* ========== SCRIPT-FIM ========== */
-function initFimAnimations() {
+        }
+
+        /* ========== SCRIPT-FIM ========== */
+        function initFimAnimations() {
             const links = document.querySelectorAll('.fim-link');
             
             links.forEach(link => {
@@ -315,8 +356,10 @@ function initFimAnimations() {
                     this.style.opacity = '0.6';
                 });
             }
-        },/* ========== SCRIPT-GLOBAL ========== */
-function initGlobalEffects() {
+        }
+
+        /* ========== SCRIPT-GLOBAL ========== */
+        function initGlobalEffects() {
             // Smooth scroll para toda a página
             document.documentElement.style.scrollBehavior = 'smooth';
             

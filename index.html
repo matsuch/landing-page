@@ -123,20 +123,21 @@
         }
 
         .btn-whatsapp {
-            background: linear-gradient(135deg, var(--whatsapp), #1da851);
-            color: white;
+            background: var(--gradient-accent);
+            color: var(--primary);
             display: inline-flex;
             align-items: center;
             gap: 10px;
             font-weight: 700;
-            border: 2px solid var(--whatsapp);
+            border: 2px solid var(--accent);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
         }
 
         .btn-whatsapp:hover {
-            background: linear-gradient(135deg, #1da851, #16a34a);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+            background: var(--accent-light);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6);
             transform: translateY(-3px);
-            border-color: #1da851;
+            border-color: var(--accent-light);
         }
 
         .whatsapp-icon {

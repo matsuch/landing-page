@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatBot IA - Automatize sua Comunicação</title>
-    <meta name="description" content="Solução de ChatBot com Inteligência Artificial para empresas que buscam excelência em atendimento automatizado">
+    <title>Automatização Premium - ChatBot IA para Empresas de Elite</title>
+    <meta name="description" content="Soluções exclusivas de ChatBot IA para empresas de alto padrão. Automatização premium que eleva seus resultados.">
     <style>
         :root {
             --primary: #d4af37;
             --primary-dark: #b8941f;
             --secondary: #1a1a1a;
-            --background: #fafafa;
-            --surface: #ffffff;
-            --text: #1a1a1a;
-            --text-light: #6b7280;
-            --accent: #f59e0b;
-            --border: #e5e7eb;
-            --shadow: rgba(26, 26, 26, 0.08);
-            --shadow-lg: rgba(26, 26, 26, 0.12);
-            --gradient: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
+            --accent: #fafafa;
+            --text: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
         }
 
         * {
@@ -31,7 +27,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text);
-            background-color: var(--background);
+            background-color: var(--white);
         }
 
         .container {
@@ -42,11 +38,11 @@
 
         /* Header */
         header {
-            background: var(--surface);
-            box-shadow: 0 2px 20px var(--shadow);
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(212, 175, 55, 0.1);
             position: fixed;
-            top: 0;
             width: 100%;
+            top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
         }
@@ -61,18 +57,17 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--secondary);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--primary);
         }
 
         .nav-links {
             display: flex;
-            list-style: none;
             gap: 2rem;
+            list-style: none;
         }
 
         .nav-links a {
@@ -93,42 +88,19 @@
             width: 0;
             height: 2px;
             bottom: -5px;
-            left: 50%;
+            left: 0;
             background: var(--gradient);
-            transition: all 0.3s ease;
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover::after {
             width: 100%;
-            left: 0;
-        }
-
-        .cta-button {
-            background: var(--gradient);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-        }
-
-        /* Main */
-        main {
-            margin-top: 80px;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--surface) 0%, #f8f9fa 100%);
-            padding: 100px 0;
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ffffff 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -141,13 +113,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23d4af37" fill-opacity="0.05"><circle cx="30" cy="30" r="1"/></g></svg>') repeat;
-            z-index: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
         }
 
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -155,11 +126,11 @@
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: var(--secondary);
-            letter-spacing: -1px;
             line-height: 1.2;
+            letter-spacing: -1px;
         }
 
-        .hero h1 span {
+        .hero .highlight {
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -176,72 +147,47 @@
             font-weight: 300;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
+        .cta-button {
+            display: inline-block;
             background: var(--gradient);
-            color: white;
-            padding: 16px 32px;
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
             border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            cursor: pointer;
+            letter-spacing: 0.5px;
         }
 
-        .btn-primary:hover {
+        .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--secondary);
-            padding: 16px 32px;
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: var(--secondary);
-            color: white;
-            border-color: var(--secondary);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
         }
 
         /* Features Section */
         .features {
-            padding: 100px 0;
-            background: var(--surface);
+            padding: 80px 0;
+            background: var(--white);
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
             margin-bottom: 4rem;
         }
 
-        .section-title h2 {
+        .section-header h2 {
             font-size: 2.8rem;
-            font-weight: 700;
             color: var(--secondary);
             margin-bottom: 1rem;
+            font-weight: 700;
             letter-spacing: -0.5px;
         }
 
-        .section-title p {
+        .section-header p {
             font-size: 1.2rem;
             color: var(--text-light);
             max-width: 600px;
@@ -251,19 +197,18 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
 
         .feature-card {
-            background: var(--surface);
+            background: var(--white);
             padding: 2.5rem;
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px var(--shadow);
-            border: 1px solid var(--border);
+            border: 1px solid rgba(212, 175, 55, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -280,20 +225,20 @@
             transition: transform 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px var(--shadow-lg);
-        }
-
         .feature-card:hover::before {
             transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
         }
 
         .feature-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            border-radius: 20px;
+            background: var(--gradient);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -303,80 +248,131 @@
 
         .feature-card h3 {
             font-size: 1.5rem;
-            font-weight: 700;
             color: var(--secondary);
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .feature-card p {
             color: var(--text-light);
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.6;
             font-weight: 300;
         }
 
-        /* Stats Section */
-        .stats {
-            background: var(--secondary);
-            color: white;
+        /* Benefits Section */
+        .benefits {
             padding: 80px 0;
-            text-align: center;
+            background: var(--accent);
         }
 
-        .stats-grid {
+        .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .stat-item h3 {
-            font-size: 3rem;
+        .benefit-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .benefit-number {
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .benefit-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
             font-weight: 300;
         }
 
         /* CTA Section */
         .cta-section {
-            background: var(--background);
-            padding: 100px 0;
+            padding: 80px 0;
+            background: var(--secondary);
+            color: var(--white);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
         }
 
         .cta-content {
-            background: var(--surface);
-            padding: 4rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 40px var(--shadow-lg);
-            border: 1px solid var(--border);
+            position: relative;
+            z-index: 2;
         }
 
-        .cta-content h2 {
+        .cta-section h2 {
             font-size: 2.5rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 1rem;
             letter-spacing: -0.5px;
         }
 
-        .cta-content p {
+        .cta-section p {
             font-size: 1.2rem;
-            color: var(--text-light);
             margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
             font-weight: 300;
+        }
+
+        .cta-button-white {
+            background: var(--white);
+            color: var(--secondary);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
         }
 
         /* Footer */
         footer {
             background: var(--secondary);
-            color: white;
+            color: var(--white);
             padding: 50px 0 30px;
-            text-align: center;
         }
 
         .footer-content {
@@ -387,17 +383,27 @@
         }
 
         .footer-section h3 {
-            color: var(--primary);
+            font-size: 1.3rem;
             margin-bottom: 1rem;
+            color: var(--primary);
             font-weight: 600;
         }
 
-        .footer-section p, .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
+        .footer-section p,
+        .footer-section li {
+            color: #ccc;
             margin-bottom: 0.5rem;
-            display: block;
             font-weight: 300;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .footer-section a:hover {
@@ -405,26 +411,11 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
             padding-top: 2rem;
-            opacity: 0.7;
-            font-weight: 300;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -441,119 +432,139 @@
                 font-size: 1.1rem;
             }
 
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title h2 {
+            .section-header h2 {
                 font-size: 2.2rem;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
 
-            .cta-content {
-                padding: 2rem;
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
 
-            .cta-content h2 {
+            .cta-section h2 {
                 font-size: 2rem;
             }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-content > *:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .hero-content > *:nth-child(3) {
+            animation-delay: 0.4s;
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">ChatBot<span>AI</span></div>
+            <div class="logo">EliteBot IA</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Recursos</a></li>
-                <li><a href="#pricing">Preços</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#features">Soluções</a></li>
+                <li><a href="#benefits">Diferenciais</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
-            <a href="#contact" class="cta-button">Começar Grátis</a>
         </nav>
     </header>
 
     <main>
-        <section class="hero" id="home">
+        <section id="home" class="hero">
             <div class="container">
-                <div class="hero-content fade-in-up">
-                    <h1>Automatização <span>Premium</span><br>para Empresas de Elite</h1>
-                    <p>Solução de inteligência artificial exclusiva para organizações que exigem excelência operacional e resultados extraordinários</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn-primary">
-                            Solicitar Demonstração Executiva
-                        </a>
-                        <a href="#features" class="btn-secondary">Conhecer Benefícios</a>
-                    </div>
+                <div class="hero-content">
+                    <h1>Automatização <span class="highlight">Premium</span><br>Para Empresas de Elite</h1>
+                    <p>Soluções exclusivas de ChatBot IA que elevam a excelência operacional do seu negócio. Tecnologia de ponta para resultados excepcionais.</p>
+                    <a href="http://wa.me/5547988924554" class="cta-button">Agendar Consultoria Estratégica</a>
                 </div>
             </div>
         </section>
 
-        <section class="features" id="features">
+        <section id="features" class="features">
             <div class="container">
-                <div class="section-title">
-                    <h2>Excelência Operacional Automatizada</h2>
-                    <p>Tecnologia de ponta desenvolvida para organizações que não aceitam menos que a perfeição</p>
+                <div class="section-header">
+                    <h2>Soluções de Classe Mundial</h2>
+                    <p>Tecnologia avançada personalizada para atender os mais altos padrões de qualidade e performance empresarial</p>
                 </div>
                 <div class="features-grid">
-                    <div class="feature-card fade-in-up">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Precisão Executiva</h3>
-                        <p>Sistema de IA treinado especificamente para o padrão de excelência do seu segmento de mercado premium</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>IA Conversacional Avançada</h3>
+                        <p>Processamento de linguagem natural de última geração, com compreensão contextual sofisticada para interações premium</p>
                     </div>
-                    <div class="feature-card fade-in-up">
+                    <div class="feature-card">
                         <div class="feature-icon">⚡</div>
-                        <h3>Performance Superior</h3>
-                        <p>Resposta instantânea 24/7 com qualidade de atendimento que supera expectativas dos clientes mais exigentes</p>
+                        <h3>Automação Inteligente</h3>
+                        <p>Fluxos de trabalho automatizados que otimizam processos complexos, aumentando a eficiência operacional em até 300%</p>
                     </div>
-                    <div class="feature-card fade-in-up">
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Analytics Executivo</h3>
+                        <p>Relatórios detalhados e insights estratégicos para tomada de decisões baseada em dados premium</p>
+                    </div>
+                    <div class="feature-card">
                         <div class="feature-icon">🔒</div>
                         <h3>Segurança Corporativa</h3>
-                        <p>Criptografia de nível bancário e compliance total para proteger informações estratégicas da sua empresa</p>
+                        <p>Proteção de dados empresariais com criptografia militar e compliance com as principais regulamentações</p>
                     </div>
-                    <div class="feature-card fade-in-up">
-                        <div class="feature-icon">📊</div>
-                        <h3>Analytics Avançado</h3>
-                        <p>Relatórios executivos detalhados com insights estratégicos para tomada de decisões baseada em dados</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Personalização Exclusiva</h3>
+                        <p>Soluções sob medida desenvolvidas especificamente para atender às necessidades únicas do seu negócio</p>
                     </div>
-                    <div class="feature-card fade-in-up">
-                        <div class="feature-icon">🎨</div>
-                        <h3>Customização Premium</h3>
-                        <p>Interface e fluxos personalizados que refletem a identidade única e valores da sua marca de luxo</p>
-                    </div>
-                    <div class="feature-card fade-in-up">
-                        <div class="feature-icon">🚀</div>
-                        <h3>Escalabilidade Ilimitada</h3>
-                        <p>Infraestrutura enterprise que acompanha o crescimento acelerado do seu negócio premium</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">📞</div>
+                        <h3>Suporte Dedicado</h3>
+                        <p>Equipe especializada disponível 24/7 para garantir performance máxima e resolução imediata</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="stats">
+        <section id="benefits" class="benefits">
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <h3>98%</h3>
-                        <p>Taxa de Satisfação Premium</p>
+                <div class="section-header">
+                    <h2>Resultados Comprovados</h2>
+                    <p>Métricas de excelência que demonstram o impacto transformador em organizações de alto padrão</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-number">85%</div>
+                        <h3>Redução de Custos</h3>
+                        <p>Operacionais em atendimento e processos administrativos</p>
                     </div>
-                    <div class="stat-item">
-                        <h3>2.3s</h3>
-                        <p>Tempo Médio de Resposta</p>
+                    <div class="benefit-item">
+                        <div class="benefit-number">24/7</div>
+                        <h3>Disponibilidade Total</h3>
+                        <p>Atendimento ininterrupto com qualidade premium</p>
                     </div>
-                    <div class="stat-item">
-                        <h3>500+</h3>
-                        <p>Empresas Premium Atendidas</p>
+                    <div class="benefit-item">
+                        <div class="benefit-number">98%</div>
+                        <h3>Satisfação do Cliente</h3>
+                        <p>Índice de aprovação em organizações implementadas</p>
                     </div>
-                    <div class="stat-item">
-                        <h3>24/7</h3>
-                        <p>Suporte Executivo Dedicado</p>
+                    <div class="benefit-item">
+                        <div class="benefit-number">300%</div>
+                        <h3>Aumento de Eficiência</h3>
+                        <p>Melhoria comprovada em processos automatizados</p>
                     </div>
                 </div>
             </div>
@@ -562,11 +573,9 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>Eleve Sua Empresa ao Próximo Nível</h2>
-                    <p>Junte-se às organizações líderes que escolheram excelência em automação inteligente</p>
-                    <a href="#contact" class="btn-primary">
-                        Agendar Consultoria Estratégica
-                    </a>
+                    <h2>Elevamos Seu Negócio ao Próximo Nível</h2>
+                    <p>Agende uma demonstração executiva personalizada e descubra como nossa tecnologia pode transformar seus resultados</p>
+                    <a href="http://wa.me/5547988924554" class="cta-button-white">Solicitar Demonstração Executiva</a>
                 </div>
             </div>
         </section>
@@ -576,27 +585,44 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>ChatBot AI Premium</h3>
-                    <p>Excelência em automação inteligente para empresas que definem padrões de mercado</p>
+                    <h3>EliteBot IA</h3>
+                    <p>Automatização premium para empresas que buscam excelência operacional e resultados excepcionais.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Contato Executivo</h3>
-                    <a href="mailto:executivo@chatbotai.com">executivo@chatbotai.com</a>
-                    <a href="tel:+551150000000">+55 (11) 5000-0000</a>
+                    <ul>
+                        <li>📧 elite@elitebotia.com</li>
+                        <li>📱 +55 (47) 98892-4554</li>
+                        <li>🏢 Av. Faria Lima, 1234 - São Paulo</li>
+                    </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Endereço Corporativo</h3>
-                    <p>Av. Faria Lima, 3000<br>São Paulo - SP, 04538-132</p>
+                    <h3>Soluções</h3>
+                    <ul>
+                        <li><a href="#">ChatBot Empresarial</a></li>
+                        <li><a href="#">Automação Premium</a></li>
+                        <li><a href="#">Consultoria Estratégica</a></li>
+                        <li><a href="#">Suporte Dedicado</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Cases de Sucesso</a></li>
+                        <li><a href="#">Certificações</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 ChatBot AI Premium. Todos os direitos reservados.</p>
+                <p>&copy; 2024 EliteBot IA. Todos os direitos reservados. Tecnologia Premium para Empresas de Elite.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling para links de navegação
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -610,17 +636,7 @@
             });
         });
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            } else {
-                header.style.background = 'var(--surface)';
-            }
-        });
-
-        // Animate elements on scroll
+        // Animação ao scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -629,44 +645,93 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card').forEach(card => {
-            observer.observe(card);
+        // Observar elementos para animação
+        document.querySelectorAll('.feature-card, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
 
-        // Counter animation for stats
-        const counters = document.querySelectorAll('.stat-item h3');
-        const speed = 200;
+        // Header com efeito de transparência no scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+            }
+        });
 
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = counter.innerText;
-                const count = +counter.innerText.replace(/[^0-9.]/g, '');
-                const increment = target.includes('%') ? 1 : target.includes('s') ? 0.1 : 10;
-                
-                if (count < parseInt(target)) {
-                    counter.innerText = Math.ceil(count + increment) + target.replace(/[0-9.]/g, '');
-                    setTimeout(updateCount, speed);
-                } else {
-                    counter.innerText = target;
+        // Efeito de digitação no título
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
                 }
-            };
+            }
+            
+            type();
+        }
 
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        updateCount();
-                        statsObserver.unobserve(entry.target);
+        // Contador animado para os números dos benefícios
+        function animateCounters() {
+            const counters = document.querySelectorAll('.benefit-number');
+            
+            counters.forEach(counter => {
+                const target = counter.innerText;
+                const isPercentage = target.includes('%');
+                const isTime = target.includes('/');
+                let numericTarget = parseInt(target.replace(/[^\d]/g, ''));
+                
+                let current = 0;
+                const increment = numericTarget / 30;
+                
+                const updateCounter = () => {
+                    if (current < numericTarget) {
+                        current += increment;
+                        if (isPercentage) {
+                            counter.innerText = Math.ceil(current) + '%';
+                        } else if (isTime) {
+                            counter.innerText = Math.ceil(current) + '/7';
+                        } else {
+                            counter.innerText = Math.ceil(current) + '%';
+                        }
+                        setTimeout(updateCounter, 50);
+                    } else {
+                        counter.innerText = target;
                     }
-                });
+                };
+                
+                updateCounter();
             });
+        }
 
-            statsObserver.observe(counter.parentElement);
-        });
+        // Observer para os contadores
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const benefitsSection = document.querySelector('.benefits');
+        if (benefitsSection) {
+            counterObserver.observe(benefitsSection);
+        }
     </script>
 </body>
 </html>

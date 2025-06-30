@@ -149,10 +149,16 @@
         }
 
         /* Carousel Styles */
-        .carousel-container {
+        .carousel-wrapper {
             position: relative;
             max-width: 1000px;
             margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
             background: var(--white);
             border-radius: 20px;
             box-shadow: var(--shadow);
@@ -231,11 +237,11 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: var(--primary);
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            z-index: 2;
+            z-index: 10;
         }
 
         .carousel-nav:hover {
@@ -245,11 +251,11 @@
         }
 
         .carousel-nav.prev {
-            left: -25px;
+            left: 0;
         }
 
         .carousel-nav.next {
-            right: -25px;
+            right: 0;
         }
 
         /* Carousel Indicators */
@@ -388,6 +394,10 @@
                 padding: 0 1rem;
             }
 
+            .carousel-wrapper {
+                padding: 0 30px;
+            }
+
             .carousel {
                 height: 450px;
             }
@@ -405,15 +415,7 @@
             .carousel-nav {
                 width: 40px;
                 height: 40px;
-                font-size: 1rem;
-            }
-
-            .carousel-nav.prev {
-                left: -20px;
-            }
-
-            .carousel-nav.next {
-                right: -20px;
+                font-size: 1.2rem;
             }
         }
 
@@ -423,8 +425,18 @@
                 gap: 1rem;
             }
 
+            .carousel-wrapper {
+                padding: 0 20px;
+            }
+
             .carousel {
                 height: 500px;
+            }
+
+            .carousel-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -450,56 +462,58 @@
                 <p>Descubra como nossa IA pode transformar completamente a experiência dos seus clientes</p>
             </div>
             
-            <div class="carousel-container">
-                <div class="carousel">
-                    <button class="carousel-nav prev" onclick="changeSlide(-1)">‹</button>
-                    <button class="carousel-nav next" onclick="changeSlide(1)">›</button>
-                    
-                    <div class="carousel-slide active">
-                        <div class="feature-card">
-                            <div class="feature-icon">📅</div>
-                            <h3>Agendamento Automatizado</h3>
-                            <p>Sistema inteligente que gerencia sua agenda automaticamente, reduzindo no-shows em até 70% e otimizando seu tempo.</p>
+            <div class="carousel-wrapper">
+                <button class="carousel-nav prev" onclick="changeSlide(-1)">‹</button>
+                <button class="carousel-nav next" onclick="changeSlide(1)">›</button>
+                
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slide active">
+                            <div class="feature-card">
+                                <div class="feature-icon">📅</div>
+                                <h3>Agendamento Automatizado</h3>
+                                <p>Sistema inteligente que gerencia sua agenda automaticamente, reduzindo no-shows em até 70% e otimizando seu tempo.</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="feature-card">
-                            <div class="feature-icon">👨‍⚕️</div>
-                            <h3>Atendimento Personalizado</h3>
-                            <p>IA que aprende com cada interação, oferecendo respostas personalizadas e experiência única para cada cliente.</p>
+                        
+                        <div class="carousel-slide">
+                            <div class="feature-card">
+                                <div class="feature-icon">👨‍⚕️</div>
+                                <h3>Atendimento Personalizado</h3>
+                                <p>IA que aprende com cada interação, oferecendo respostas personalizadas e experiência única para cada cliente.</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="feature-card">
-                            <div class="feature-icon">🔍</div>
-                            <h3>Triagem e Qualificação</h3>
-                            <p>Identifica e qualifica leads automaticamente, direcionando apenas prospects qualificados para sua equipe.</p>
+                        
+                        <div class="carousel-slide">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔍</div>
+                                <h3>Triagem e Qualificação</h3>
+                                <p>Identifica e qualifica leads automaticamente, direcionando apenas prospects qualificados para sua equipe.</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="feature-card">
-                            <div class="feature-icon">🔔</div>
-                            <h3>Lembretes Automáticos</h3>
-                            <p>Sistema de notificações inteligente que mantém seus clientes sempre informados sobre consultas e compromissos.</p>
+                        
+                        <div class="carousel-slide">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔔</div>
+                                <h3>Lembretes Automáticos</h3>
+                                <p>Sistema de notificações inteligente que mantém seus clientes sempre informados sobre consultas e compromissos.</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="feature-card">
-                            <div class="feature-icon">📊</div>
-                            <h3>Relatórios Inteligentes</h3>
-                            <p>Analytics avançado com insights acionáveis sobre performance, conversões e oportunidades de melhoria.</p>
+                        
+                        <div class="carousel-slide">
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>Relatórios Inteligentes</h3>
+                                <p>Analytics avançado com insights acionáveis sobre performance, conversões e oportunidades de melhoria.</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="feature-card">
-                            <div class="feature-icon">🔒</div>
-                            <h3>Segurança e LGPD</h3>
-                            <p>Proteção total dos dados com criptografia de ponta e total conformidade com a Lei Geral de Proteção de Dados.</p>
+                        
+                        <div class="carousel-slide">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔒</div>
+                                <h3>Segurança e LGPD</h3>
+                                <p>Proteção total dos dados com criptografia de ponta e total conformidade com a Lei Geral de Proteção de Dados.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

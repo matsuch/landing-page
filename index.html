@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatização Premium - ChatBot IA para Empresas de Elite</title>
-    <meta name="description" content="Soluções exclusivas de ChatBot IA para empresas de alto padrão. Automatização premium que eleva seus resultados.">
+    <title>ChatBot IA para Médicos, Advogados e Consultórios | Atendimento 24h Automatizado</title>
+    <meta name="description" content="Transforme o atendimento do seu consultório ou escritório com ChatBot IA. Agende consultas, tire dúvidas e qualifique leads 24h por dia automaticamente.">
     <style>
         :root {
-            --primary: #d4af37;
-            --primary-dark: #b8941f;
-            --secondary: #1a1a1a;
-            --accent: #fafafa;
-            --text: #333;
-            --text-light: #666;
-            --white: #ffffff;
-            --gradient: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f8fafc;
+            --accent: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --success: #059669;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         * {
@@ -26,8 +27,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text);
-            background-color: var(--white);
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
 
         .container {
@@ -38,13 +39,14 @@
 
         /* Header */
         header {
-            background: var(--white);
-            box-shadow: 0 2px 20px rgba(212, 175, 55, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
 
         nav {
@@ -55,52 +57,32 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
+            color: var(--primary);
         }
 
         .nav-links {
-            display: flex;
+            display: none;
             gap: 2rem;
-            list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text);
+            color: var(--text-dark);
             font-weight: 500;
             transition: color 0.3s ease;
-            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--gradient);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
         /* Hero Section */
         .hero {
+            background: var(--gradient);
+            color: white;
             padding: 120px 0 80px;
-            background: linear-gradient(135deg, var(--accent) 0%, #ffffff 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -113,7 +95,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+            z-index: 1;
         }
 
         .hero-content {
@@ -125,113 +108,79 @@
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            color: var(--secondary);
             line-height: 1.2;
-            letter-spacing: -1px;
+            animation: fadeInUp 1s ease;
         }
 
-        .hero .highlight {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 300;
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
         }
 
         .cta-button {
             display: inline-block;
-            background: var(--gradient);
-            color: var(--white);
-            padding: 18px 40px;
-            border-radius: 50px;
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
             text-decoration: none;
+            border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
-            border: none;
-            cursor: pointer;
-            letter-spacing: 0.5px;
+            animation: fadeInUp 1s ease 0.4s both;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
-        /* Features Section */
+        /* Features Grid */
         .features {
             padding: 80px 0;
-            background: var(--white);
+            background: var(--secondary);
         }
 
-        .section-header {
+        .section-title {
             text-align: center;
             margin-bottom: 4rem;
         }
 
-        .section-header h2 {
-            font-size: 2.8rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
+        .section-title h2 {
+            font-size: 2.5rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
         }
 
-        .section-header p {
-            font-size: 1.2rem;
+        .section-title p {
+            font-size: 1.1rem;
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
-            font-weight: 300;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .feature-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 20px;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         .feature-icon {
@@ -247,132 +196,139 @@
         }
 
         .feature-card h3 {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
             font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
         }
 
         .feature-card p {
             color: var(--text-light);
-            font-size: 1rem;
             line-height: 1.6;
-            font-weight: 300;
         }
 
         /* Benefits Section */
         .benefits {
             padding: 80px 0;
-            background: var(--accent);
+            background: white;
         }
 
-        .benefits-grid {
+        .benefits-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .benefit-item {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        .benefit-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
-        }
-
-        .benefit-number {
+        .benefits-text h2 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
         }
 
-        .benefit-item h3 {
-            font-size: 1.3rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .benefits-list li::before {
+            content: '✅';
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .benefits-image {
+            text-align: center;
+        }
+
+        .benefits-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* How it Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--secondary);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.2rem;
             font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
         }
 
-        .benefit-item p {
+        .step p {
             color: var(--text-light);
-            font-size: 0.95rem;
-            font-weight: 300;
         }
 
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
-            background: var(--secondary);
-            color: var(--white);
+            background: var(--gradient);
+            color: white;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
         }
 
         .cta-section h2 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            margin-bottom: 1.5rem;
         }
 
         .cta-section p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 2.5rem;
             opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 300;
         }
 
-        .cta-button-white {
-            background: var(--white);
-            color: var(--secondary);
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
-            display: inline-block;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-button-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+        .cta-section .cta-button {
+            background: white;
+            color: var(--primary);
         }
 
         /* Footer */
         footer {
-            background: var(--secondary);
-            color: var(--white);
-            padding: 50px 0 30px;
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
         }
 
         .footer-content {
@@ -383,70 +339,25 @@
         }
 
         .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
+            font-size: 1.2rem;
             font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        .footer-section p,
-        .footer-section li {
-            color: #ccc;
-            margin-bottom: 0.5rem;
-            font-weight: 300;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: #ccc;
+        .footer-section p, .footer-section a {
+            color: #9ca3af;
             text-decoration: none;
-            transition: color 0.3s ease;
+            line-height: 1.6;
         }
 
         .footer-section a:hover {
-            color: var(--primary);
+            color: white;
         }
 
         .footer-bottom {
-            text-align: center;
+            border-top: 1px solid #374151;
             padding-top: 2rem;
-            border-top: 1px solid #333;
-            color: #999;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-section h2 {
-                font-size: 2rem;
-            }
+            color: #9ca3af;
         }
 
         /* Animations */
@@ -461,110 +372,197 @@
             }
         }
 
-        .hero-content > * {
-            animation: fadeInUp 0.8s ease-out;
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
 
-        .hero-content > *:nth-child(2) {
-            animation-delay: 0.2s;
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .hero-content > *:nth-child(3) {
-            animation-delay: 0.4s;
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .benefits-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .benefits-text {
+                order: 2;
+            }
+
+            .benefits-image {
+                order: 1;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">EliteBot IA</div>
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#features">Soluções</a></li>
-                <li><a href="#benefits">Diferenciais</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
+            <div class="logo">ChatBot IA Pro</div>
+            <div class="nav-links">
+                <a href="#recursos">Recursos</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#contato">Contato</a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
+        <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Automatização <span class="highlight">Premium</span><br>Para Empresas de Elite</h1>
-                    <p>Soluções exclusivas de ChatBot IA que elevam a excelência operacional do seu negócio. Tecnologia de ponta para resultados excepcionais.</p>
+                    <h1>Automatize o Atendimento do Seu Consultório com IA</h1>
+                    <p class="subtitle">ChatBot inteligente para médicos, advogados e profissionais autônomos. Agende consultas, responda dúvidas e qualifique pacientes/clientes 24 horas por dia.</p>
                     <a href="http://wa.me/5547988924554" class="cta-button">Agendar Consultoria Estratégica</a>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features">
+        <section id="recursos" class="features">
             <div class="container">
-                <div class="section-header">
-                    <h2>Soluções de Classe Mundial</h2>
-                    <p>Tecnologia avançada personalizada para atender os mais altos padrões de qualidade e performance empresarial</p>
+                <div class="section-title animate-on-scroll">
+                    <h2>Recursos Especializados para Profissionais</h2>
+                    <p>Soluções inteligentes desenvolvidas especialmente para consultórios médicos, escritórios de advocacia e profissionais autônomos</p>
                 </div>
                 <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🤖</div>
-                        <h3>IA Conversacional Avançada</h3>
-                        <p>Processamento de linguagem natural de última geração, com compreensão contextual sofisticada para interações premium</p>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">📅</div>
+                        <h3>Agendamento Automatizado</h3>
+                        <p>Seus pacientes e clientes podem agendar consultas 24h, verificando disponibilidade em tempo real e recebendo confirmações automáticas.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Automação Inteligente</h3>
-                        <p>Fluxos de trabalho automatizados que otimizam processos complexos, aumentando a eficiência operacional em até 300%</p>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">💬</div>
+                        <h3>Atendimento Personalizado</h3>
+                        <p>Respostas inteligentes sobre procedimentos, valores, localização e dúvidas frequentes, mantendo o tom profissional da sua área.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">📋</div>
+                        <h3>Triagem e Qualificação</h3>
+                        <p>Coleta informações importantes dos pacientes/clientes antes da consulta, otimizando seu tempo de atendimento presencial.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">🔔</div>
+                        <h3>Lembretes Automáticos</h3>
+                        <p>Reduz faltas com lembretes automáticos de consultas, aumentando a taxa de comparecimento e otimizando sua agenda.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
                         <div class="feature-icon">📊</div>
-                        <h3>Analytics Executivo</h3>
-                        <p>Relatórios detalhados e insights estratégicos para tomada de decisões baseada em dados premium</p>
+                        <h3>Relatórios Inteligentes</h3>
+                        <p>Acompanhe métricas importantes: agendamentos, cancelamentos, perguntas frequentes e horários de maior demanda.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3>Segurança Corporativa</h3>
-                        <p>Proteção de dados empresariais com criptografia militar e compliance com as principais regulamentações</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Personalização Exclusiva</h3>
-                        <p>Soluções sob medida desenvolvidas especificamente para atender às necessidades únicas do seu negócio</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📞</div>
-                        <h3>Suporte Dedicado</h3>
-                        <p>Equipe especializada disponível 24/7 para garantir performance máxima e resolução imediata</p>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">🔐</div>
+                        <h3>Segurança e Privacidade</h3>
+                        <p>Conformidade com LGPD e sigilo profissional. Seus dados e dos seus pacientes/clientes totalmente protegidos.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="benefits" class="benefits">
+        <section id="beneficios" class="benefits">
             <div class="container">
-                <div class="section-header">
-                    <h2>Resultados Comprovados</h2>
-                    <p>Métricas de excelência que demonstram o impacto transformador em organizações de alto padrão</p>
+                <div class="benefits-content">
+                    <div class="benefits-text animate-on-scroll">
+                        <h2>Transforme Seu Consultório em um Negócio Mais Eficiente</h2>
+                        <ul class="benefits-list">
+                            <li>Reduza até 80% das ligações repetitivas sobre agendamentos e informações básicas</li>
+                            <li>Aumente sua capacidade de atendimento sem contratar mais funcionários</li>
+                            <li>Melhore a experiência dos seus pacientes/clientes com atendimento instantâneo</li>
+                            <li>Capture mais leads qualificados fora do horário comercial</li>
+                            <li>Diminua o tempo gasto com tarefas administrativas repetitivas</li>
+                            <li>Tenha dados precisos para tomar decisões estratégicas sobre seu consultório</li>
+                            <li>Profissionalize a comunicação com seus pacientes/clientes</li>
+                            <li>Integração completa com WhatsApp Business</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-image animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Consultório moderno com tecnologia">
+                    </div>
                 </div>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <div class="benefit-number">85%</div>
-                        <h3>Redução de Custos</h3>
-                        <p>Operacionais em atendimento e processos administrativos</p>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="how-it-works">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Como Funciona na Prática</h2>
+                    <p>Implementação simples e rápida, sem complicações técnicas</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step animate-on-scroll">
+                        <div class="step-number">1</div>
+                        <h3>Análise do seu Consultório</h3>
+                        <p>Estudamos suas necessidades específicas, tipos de atendimento e fluxo de pacientes/clientes atual.</p>
                     </div>
-                    <div class="benefit-item">
-                        <div class="benefit-number">24/7</div>
-                        <h3>Disponibilidade Total</h3>
-                        <p>Atendimento ininterrupto com qualidade premium</p>
+                    <div class="step animate-on-scroll">
+                        <div class="step-number">2</div>
+                        <h3>Configuração Personalizada</h3>
+                        <p>Criamos respostas inteligentes específicas para sua especialidade, procedimentos e políticas de atendimento.</p>
                     </div>
-                    <div class="benefit-item">
-                        <div class="benefit-number">98%</div>
-                        <h3>Satisfação do Cliente</h3>
-                        <p>Índice de aprovação em organizações implementadas</p>
+                    <div class="step animate-on-scroll">
+                        <div class="step-number">3</div>
+                        <h3>Integração e Treinamento</h3>
+                        <p>Conectamos ao seu WhatsApp Business e treinamos você e sua equipe para gerenciar o sistema.</p>
                     </div>
-                    <div class="benefit-item">
-                        <div class="benefit-number">300%</div>
-                        <h3>Aumento de Eficiência</h3>
-                        <p>Melhoria comprovada em processos automatizados</p>
+                    <div class="step animate-on-scroll">
+                        <div class="step-number">4</div>
+                        <h3>Monitoramento e Otimização</h3>
+                        <p>Acompanhamos os resultados e otimizamos continuamente para maximizar a eficiência do seu atendimento.</p>
                     </div>
                 </div>
             </div>
@@ -572,57 +570,62 @@
 
         <section class="cta-section">
             <div class="container">
-                <div class="cta-content">
-                    <h2>Elevamos Seu Negócio ao Próximo Nível</h2>
-                    <p>Agende uma demonstração executiva personalizada e descubra como nossa tecnologia pode transformar seus resultados</p>
-                    <a href="http://wa.me/5547988924554" class="cta-button-white">Solicitar Demonstração Executiva</a>
-                </div>
+                <h2>Pronto para Revolucionar seu Consultório?</h2>
+                <p>Agende uma demonstração gratuita e veja como nosso ChatBot IA pode transformar seu atendimento e aumentar sua produtividade.</p>
+                <a href="http://wa.me/5547988924554" class="cta-button">Solicitar Demonstração Executiva</a>
             </div>
         </section>
     </main>
 
-    <footer id="contact">
+    <footer id="contato">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>EliteBot IA</h3>
-                    <p>Automatização premium para empresas que buscam excelência operacional e resultados excepcionais.</p>
+                    <h3>ChatBot IA Pro</h3>
+                    <p>Soluções inteligentes de automação para profissionais da saúde, advocacia e consultoria.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Contato Executivo</h3>
-                    <ul>
-                        <li>📧 elite@elitebotia.com</li>
-                        <li>📱 +55 (47) 98892-4554</li>
-                        <li>🏢 Av. Faria Lima, 1234 - São Paulo</li>
-                    </ul>
+                    <h3>Especialidades</h3>
+                    <p>Médicos e Clínicas<br>
+                    Advogados e Escritórios<br>
+                    Consultórios Odontológicos<br>
+                    Psicólogos e Terapeutas<br>
+                    Consultores Autônomos</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Soluções</h3>
-                    <ul>
-                        <li><a href="#">ChatBot Empresarial</a></li>
-                        <li><a href="#">Automação Premium</a></li>
-                        <li><a href="#">Consultoria Estratégica</a></li>
-                        <li><a href="#">Suporte Dedicado</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Empresa</h3>
-                    <ul>
-                        <li><a href="#">Sobre Nós</a></li>
-                        <li><a href="#">Cases de Sucesso</a></li>
-                        <li><a href="#">Certificações</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
-                    </ul>
+                    <h3>Suporte</h3>
+                    <p>Segunda a Sexta: 8h às 18h<br>
+                    Sábado: 8h às 12h<br>
+                    <a href="http://wa.me/5547988924554">WhatsApp: (47) 98892-4554</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 EliteBot IA. Todos os direitos reservados. Tecnologia Premium para Empresas de Elite.</p>
+                <p>&copy; 2024 ChatBot IA Pro. Todos os direitos reservados. | Desenvolvido com foco na excelência profissional.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling para links de navegação
+        // Animação de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os elementos com a classe animate-on-scroll
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para navegação
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -636,102 +639,59 @@
             });
         });
 
-        // Animação ao scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        // Efeito de hover nos cartões
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
             });
-        }, observerOptions);
-
-        // Observar elementos para animação
-        document.querySelectorAll('.feature-card, .benefit-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
         });
 
-        // Header com efeito de transparência no scroll
+        // Loading nos botões CTA
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const originalText = this.textContent;
+                this.innerHTML = '<span class="loading"></span> Conectando...';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 2000);
+            });
+        });
+
+        // Contador animado (se necessário no futuro)
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                start += increment;
+                element.textContent = Math.floor(start);
+                
+                if (start >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                }
+            }, 16);
+        }
+
+        // Performance otimizada para mobile
+        let ticking = false;
+        
+        function updateScrollEffects() {
+            // Qualquer efeito relacionado ao scroll pode ser adicionado aqui
+            ticking = false;
+        }
+
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-            } else {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+            if (!ticking) {
+                requestAnimationFrame(updateScrollEffects);
+                ticking = true;
             }
         });
-
-        // Efeito de digitação no título
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            
-            type();
-        }
-
-        // Contador animado para os números dos benefícios
-        function animateCounters() {
-            const counters = document.querySelectorAll('.benefit-number');
-            
-            counters.forEach(counter => {
-                const target = counter.innerText;
-                const isPercentage = target.includes('%');
-                const isTime = target.includes('/');
-                let numericTarget = parseInt(target.replace(/[^\d]/g, ''));
-                
-                let current = 0;
-                const increment = numericTarget / 30;
-                
-                const updateCounter = () => {
-                    if (current < numericTarget) {
-                        current += increment;
-                        if (isPercentage) {
-                            counter.innerText = Math.ceil(current) + '%';
-                        } else if (isTime) {
-                            counter.innerText = Math.ceil(current) + '/7';
-                        } else {
-                            counter.innerText = Math.ceil(current) + '%';
-                        }
-                        setTimeout(updateCounter, 50);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                
-                updateCounter();
-            });
-        }
-
-        // Observer para os contadores
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const benefitsSection = document.querySelector('.benefits');
-        if (benefitsSection) {
-            counterObserver.observe(benefitsSection);
-        }
     </script>
 </body>
 </html>

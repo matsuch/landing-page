@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatBot IA para Médicos, Advogados e Consultórios | Atendimento 24h Automatizado</title>
-    <meta name="description" content="Transforme o atendimento do seu consultório ou escritório com ChatBot IA. Agende consultas, tire dúvidas e qualifique leads 24h por dia automaticamente.">
+    <title>ChatBot IA para Consultórios - Automatize seu Atendimento</title>
+    <meta name="description" content="Automatize o atendimento do seu consultório com IA. Agendamento 24h, triagem inteligente e atendimento personalizado para médicos, advogados e profissionais autônomos.">
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #f8fafc;
-            --accent: #10b981;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-            --success: #059669;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5a67d8;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --text-dark: #2d3748;
+            --text-light: #4a5568;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
-            overflow-x: hidden;
         }
 
         .container {
@@ -39,64 +41,23 @@
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: var(--gradient);
-            color: white;
-            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 80px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
-            z-index: 1;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,0 1000,100 0,80"/></svg>');
+            background-size: cover;
         }
 
         .hero-content {
@@ -104,509 +65,664 @@
             z-index: 2;
         }
 
-        .hero h1 {
+        .hero-title {
             font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
             line-height: 1.2;
-            animation: fadeInUp 1s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .hero .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-button {
             display: inline-block;
-            background: white;
+            background: var(--white);
             color: var(--primary);
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
+            padding: 18px 40px;
+            border: none;
+            border-radius: var(--border-radius);
             font-size: 1.1rem;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.4s both;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            cursor: pointer;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            background: #f8fafc;
         }
 
-        /* Features Grid */
-        .features {
+        /* Main Content */
+        main {
             padding: 80px 0;
-            background: var(--secondary);
+            background: var(--bg-light);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title h2 {
             font-size: 2.5rem;
             font-weight: 700;
+            margin-bottom: 20px;
             color: var(--text-dark);
-            margin-bottom: 1rem;
         }
 
-        .section-title p {
-            font-size: 1.1rem;
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
             color: var(--text-light);
+            margin-bottom: 60px;
             max-width: 600px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            padding: 0 20px;
         }
 
         .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-hover);
         }
 
         .feature-icon {
             width: 80px;
             height: 80px;
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 30px;
             font-size: 2rem;
+            color: var(--white);
         }
 
-        .feature-card h3 {
-            font-size: 1.3rem;
+        .feature-title {
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
             color: var(--text-dark);
         }
 
-        .feature-card p {
+        .feature-description {
             color: var(--text-light);
             line-height: 1.6;
+        }
+
+        /* Carousel Controls */
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .carousel-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .indicator.active {
+            background: var(--primary);
         }
 
         /* Benefits Section */
         .benefits {
             padding: 80px 0;
-            background: white;
+            background: var(--white);
         }
 
-        .benefits-content {
+        .benefits-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
-        .benefits-text h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-dark);
-        }
-
-        .benefits-list {
-            list-style: none;
-        }
-
-        .benefits-list li {
+        .benefit-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            gap: 20px;
         }
 
-        .benefits-list li::before {
-            content: '✅';
-            margin-right: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .benefits-image {
-            text-align: center;
-        }
-
-        .benefits-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* How it Works */
-        .how-it-works {
-            padding: 80px 0;
-            background: var(--secondary);
-        }
-
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
+        .benefit-icon {
             width: 60px;
             height: 60px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
+            color: var(--white);
+            flex-shrink: 0;
         }
 
-        .step h3 {
-            font-size: 1.2rem;
+        .benefit-content h3 {
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
             color: var(--text-dark);
         }
 
-        .step p {
+        .benefit-content p {
             color: var(--text-light);
+            line-height: 1.6;
         }
 
         /* CTA Section */
         .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
             padding: 80px 0;
-            background: var(--gradient);
-            color: white;
             text-align: center;
         }
 
-        .cta-section h2 {
+        .cta-content h2 {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
-        .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
         }
 
-        .cta-section .cta-button {
-            background: white;
+        .cta-button-secondary {
+            background: var(--white);
             color: var(--primary);
+            padding: 18px 40px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+        }
+
+        .cta-button-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
         /* Footer */
         footer {
             background: var(--text-dark);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
+            color: var(--white);
+            padding: 60px 0 30px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-section h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
+            color: var(--white);
         }
 
-        .footer-section p, .footer-section a {
-            color: #9ca3af;
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #a0aec0;
             text-decoration: none;
-            line-height: 1.6;
+            transition: var(--transition);
         }
 
-        .footer-section a:hover {
-            color: white;
+        .footer-section ul li a:hover {
+            color: var(--white);
         }
 
         .footer-bottom {
-            border-top: 1px solid #374151;
-            padding-top: 2rem;
-            color: #9ca3af;
+            border-top: 1px solid #4a5568;
+            padding-top: 30px;
+            text-align: center;
+            color: #a0aec0;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Mobile Responsive */
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
+            .hero-title {
                 font-size: 2.5rem;
             }
 
-            .hero .subtitle {
-                font-size: 1rem;
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
 
-            .section-title h2 {
+            .section-title {
                 font-size: 2rem;
             }
 
-            .benefits-content {
+            .carousel-slide {
+                padding: 0 10px;
+            }
+
+            .feature-card {
+                padding: 30px 20px;
+                height: auto;
+                min-height: 350px;
+            }
+
+            .benefits-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .benefits-text {
-                order: 2;
-            }
-
-            .benefits-image {
-                order: 1;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .steps-container {
-                grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 30px;
             }
         }
 
-        /* Scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
 
-        /* Loading animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-        }
+            .container {
+                padding: 0 15px;
+            }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+            .feature-card {
+                padding: 25px 15px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav class="container">
-            <div class="logo">ChatBot IA Pro</div>
-            <div class="nav-links">
-                <a href="#recursos">Recursos</a>
-                <a href="#beneficios">Benefícios</a>
-                <a href="#como-funciona">Como Funciona</a>
-                <a href="#contato">Contato</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Automatize o Atendimento do Seu Consultório com IA</h1>
+                <p class="hero-subtitle">Transforme seu atendimento com um assistente virtual inteligente. Agendamentos 24h, triagem automática e comunicação profissional para médicos, advogados e profissionais autônomos.</p>
+                <a href="http://wa.me/5547988924554" class="cta-button">Quero Automatizar Meu Consultório</a>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Automatize o Atendimento do Seu Consultório com IA</h1>
-                    <p class="subtitle">ChatBot inteligente para médicos, advogados e profissionais autônomos. Agende consultas, responda dúvidas e qualifique pacientes/clientes 24 horas por dia.</p>
-                    <a href="http://wa.me/5547988924554" class="cta-button">Agendar Consultoria Estratégica</a>
+        <div class="container">
+            <h2 class="section-title">Recursos Especializados para Consultórios</h2>
+            <p class="section-subtitle">Desenvolvido especificamente para as necessidades de médicos, advogados, psicólogos e profissionais autônomos</p>
+            
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-slide">
+                        <div class="feature-card">
+                            <div class="feature-icon">📅</div>
+                            <h3 class="feature-title">Agendamento Automatizado</h3>
+                            <p class="feature-description">Permita que pacientes e clientes agendem consultas 24h por dia, verificando sua agenda em tempo real e enviando confirmações automáticas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="feature-card">
+                            <div class="feature-icon">👨‍⚕️</div>
+                            <h3 class="feature-title">Atendimento Personalizado</h3>
+                            <p class="feature-description">Configure o tom e linguagem específica da sua área: formal para advocacia, acolhedor para saúde mental, técnico para medicina.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="feature-card">
+                            <div class="feature-icon">🔍</div>
+                            <h3 class="feature-title">Triagem e Qualificação</h3>
+                            <p class="feature-description">Colete informações importantes antes da consulta: sintomas, urgência do caso, documentos necessários, histórico relevante.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="feature-card">
+                            <div class="feature-icon">🔔</div>
+                            <h3 class="feature-title">Lembretes Automáticos</h3>
+                            <p class="feature-description">Reduza faltas com lembretes personalizados via WhatsApp. Configure para enviar 24h e 2h antes da consulta.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="feature-title">Relatórios Inteligentes</h3>
+                            <p class="feature-description">Acompanhe métricas do seu consultório: taxa de agendamentos, horários mais procurados, tipos de consulta mais comuns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3 class="feature-title">Segurança e LGPD</h3>
+                            <p class="feature-description">Total conformidade com sigilo profissional e LGPD. Dados criptografados e política de privacidade específica para consultórios.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn">‹</button>
+                    <div class="carousel-indicators" id="indicators"></div>
+                    <button class="carousel-btn" id="nextBtn">›</button>
                 </div>
             </div>
-        </section>
-
-        <section id="recursos" class="features">
-            <div class="container">
-                <div class="section-title animate-on-scroll">
-                    <h2>Recursos Especializados para Profissionais</h2>
-                    <p>Soluções inteligentes desenvolvidas especialmente para consultórios médicos, escritórios de advocacia e profissionais autônomos</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon">📅</div>
-                        <h3>Agendamento Automatizado</h3>
-                        <p>Seus pacientes e clientes podem agendar consultas 24h, verificando disponibilidade em tempo real e recebendo confirmações automáticas.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon">💬</div>
-                        <h3>Atendimento Personalizado</h3>
-                        <p>Respostas inteligentes sobre procedimentos, valores, localização e dúvidas frequentes, mantendo o tom profissional da sua área.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon">📋</div>
-                        <h3>Triagem e Qualificação</h3>
-                        <p>Coleta informações importantes dos pacientes/clientes antes da consulta, otimizando seu tempo de atendimento presencial.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon">🔔</div>
-                        <h3>Lembretes Automáticos</h3>
-                        <p>Reduz faltas com lembretes automáticos de consultas, aumentando a taxa de comparecimento e otimizando sua agenda.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon">📊</div>
-                        <h3>Relatórios Inteligentes</h3>
-                        <p>Acompanhe métricas importantes: agendamentos, cancelamentos, perguntas frequentes e horários de maior demanda.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon">🔐</div>
-                        <h3>Segurança e Privacidade</h3>
-                        <p>Conformidade com LGPD e sigilo profissional. Seus dados e dos seus pacientes/clientes totalmente protegidos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="beneficios" class="benefits">
-            <div class="container">
-                <div class="benefits-content">
-                    <div class="benefits-text animate-on-scroll">
-                        <h2>Transforme Seu Consultório em um Negócio Mais Eficiente</h2>
-                        <ul class="benefits-list">
-                            <li>Reduza até 80% das ligações repetitivas sobre agendamentos e informações básicas</li>
-                            <li>Aumente sua capacidade de atendimento sem contratar mais funcionários</li>
-                            <li>Melhore a experiência dos seus pacientes/clientes com atendimento instantâneo</li>
-                            <li>Capture mais leads qualificados fora do horário comercial</li>
-                            <li>Diminua o tempo gasto com tarefas administrativas repetitivas</li>
-                            <li>Tenha dados precisos para tomar decisões estratégicas sobre seu consultório</li>
-                            <li>Profissionalize a comunicação com seus pacientes/clientes</li>
-                            <li>Integração completa com WhatsApp Business</li>
-                        </ul>
-                    </div>
-                    <div class="benefits-image animate-on-scroll">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Consultório moderno com tecnologia">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="como-funciona" class="how-it-works">
-            <div class="container">
-                <div class="section-title animate-on-scroll">
-                    <h2>Como Funciona na Prática</h2>
-                    <p>Implementação simples e rápida, sem complicações técnicas</p>
-                </div>
-                <div class="steps-container">
-                    <div class="step animate-on-scroll">
-                        <div class="step-number">1</div>
-                        <h3>Análise do seu Consultório</h3>
-                        <p>Estudamos suas necessidades específicas, tipos de atendimento e fluxo de pacientes/clientes atual.</p>
-                    </div>
-                    <div class="step animate-on-scroll">
-                        <div class="step-number">2</div>
-                        <h3>Configuração Personalizada</h3>
-                        <p>Criamos respostas inteligentes específicas para sua especialidade, procedimentos e políticas de atendimento.</p>
-                    </div>
-                    <div class="step animate-on-scroll">
-                        <div class="step-number">3</div>
-                        <h3>Integração e Treinamento</h3>
-                        <p>Conectamos ao seu WhatsApp Business e treinamos você e sua equipe para gerenciar o sistema.</p>
-                    </div>
-                    <div class="step animate-on-scroll">
-                        <div class="step-number">4</div>
-                        <h3>Monitoramento e Otimização</h3>
-                        <p>Acompanhamos os resultados e otimizamos continuamente para maximizar a eficiência do seu atendimento.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <h2>Pronto para Revolucionar seu Consultório?</h2>
-                <p>Agende uma demonstração gratuita e veja como nosso ChatBot IA pode transformar seu atendimento e aumentar sua produtividade.</p>
-                <a href="http://wa.me/5547988924554" class="cta-button">Solicitar Demonstração Executiva</a>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <footer id="contato">
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefícios para Seu Consultório</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏰</div>
+                    <div class="benefit-content">
+                        <h3>Reduz Ligações Repetitivas</h3>
+                        <p>Elimine 80% das ligações sobre agendamentos, horários de funcionamento e informações básicas. Sua equipe pode focar no que realmente importa.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">💼</div>
+                    <div class="benefit-content">
+                        <h3>Aumenta Capacidade sem Contratar</h3>
+                        <p>Atenda mais pacientes e clientes sem precisar contratar recepcionistas. O bot trabalha 24h por dia, inclusive finais de semana.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌙</div>
+                    <div class="benefit-content">
+                        <h3>Captura Leads Fora do Horário</h3>
+                        <p>Não perca mais pacientes que buscam atendimento após o expediente. O bot agenda e qualifica interessados 24h.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">⭐</div>
+                    <div class="benefit-content">
+                        <h3>Profissionaliza Comunicação</h3>
+                        <p>Garanta que todos os pacientes recebam o mesmo nível de atendimento profissional, independente de quem esteja de plantão.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <div class="benefit-content">
+                        <h3>Melhora Taxa de Comparecimento</h3>
+                        <p>Com lembretes automáticos e melhor comunicação, reduza significativamente o número de faltas em consultas.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-content">
+                        <h3>ROI Comprovado</h3>
+                        <p>Investimento que se paga em 30 dias. Economize em salários, aumente receita e melhore a experiência dos pacientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Transforme Seu Consultório Hoje</h2>
+                <p>Junte-se a centenas de profissionais que já automatizaram seu atendimento e aumentaram sua receita</p>
+                <a href="http://wa.me/5547988924554" class="cta-button-secondary">Solicitar Demonstração Gratuita</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>ChatBot IA Pro</h3>
-                    <p>Soluções inteligentes de automação para profissionais da saúde, advocacia e consultoria.</p>
+                    <h3>Especialidades Atendidas</h3>
+                    <ul>
+                        <li><a href="#">Médicos e Clínicas</a></li>
+                        <li><a href="#">Advogados e Escritórios</a></li>
+                        <li><a href="#">Consultórios Odontológicos</a></li>
+                        <li><a href="#">Psicólogos e Terapeutas</a></li>
+                        <li><a href="#">Consultores Autônomos</a></li>
+                    </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h3>Especialidades</h3>
-                    <p>Médicos e Clínicas<br>
-                    Advogados e Escritórios<br>
-                    Consultórios Odontológicos<br>
-                    Psicólogos e Terapeutas<br>
-                    Consultores Autônomos</p>
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="#">Agendamento Online</a></li>
+                        <li><a href="#">Lembretes Automáticos</a></li>
+                        <li><a href="#">Triagem Inteligente</a></li>
+                        <li><a href="#">Relatórios e Métricas</a></li>
+                        <li><a href="#">Integração WhatsApp</a></li>
+                    </ul>
                 </div>
+                
                 <div class="footer-section">
                     <h3>Suporte</h3>
-                    <p>Segunda a Sexta: 8h às 18h<br>
-                    Sábado: 8h às 12h<br>
-                    <a href="http://wa.me/5547988924554">WhatsApp: (47) 98892-4554</a></p>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Suporte Técnico</a></li>
+                        <li><a href="#">Consultoria</a></li>
+                        <li><a href="#">Treinamentos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="http://wa.me/5547988924554">WhatsApp</a></li>
+                        <li><a href="mailto:contato@chatbot.com">Email</a></li>
+                        <li><a href="#">Demonstração</a></li>
+                        <li><a href="#">Orçamento</a></li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 ChatBot IA Pro. Todos os direitos reservados. | Desenvolvido com foco na excelência profissional.</p>
+                <p>&copy; 2024 ChatBot IA para Consultórios. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Animação de scroll
+        // Carousel functionality
+        class Carousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.carousel = document.getElementById('carousel');
+                this.slides = this.carousel.children;
+                this.totalSlides = this.slides.length;
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.indicatorsContainer = document.getElementById('indicators');
+                
+                this.init();
+            }
+            
+            init() {
+                this.createIndicators();
+                this.updateCarousel();
+                this.bindEvents();
+                this.startAutoSlide();
+            }
+            
+            createIndicators() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.classList.add('indicator');
+                    indicator.addEventListener('click', () => this.goToSlide(i));
+                    this.indicatorsContainer.appendChild(indicator);
+                }
+            }
+            
+            bindEvents() {
+                this.prevBtn.addEventListener('click', () => this.previousSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // Pause auto-slide on hover
+                this.carousel.addEventListener('mouseenter', () => this.stopAutoSlide());
+                this.carousel.addEventListener('mouseleave', () => this.startAutoSlide());
+            }
+            
+            updateCarousel() {
+                const translateX = -this.currentSlide * 100;
+                this.carousel.style.transform = `translateX(${translateX}%)`;
+                
+                // Update indicators
+                const indicators = this.indicatorsContainer.children;
+                for (let i = 0; i < indicators.length; i++) {
+                    indicators[i].classList.toggle('active', i === this.currentSlide);
+                }
+                
+                // Update button states
+                this.prevBtn.disabled = this.currentSlide === 0;
+                this.nextBtn.disabled = this.currentSlide === this.totalSlides - 1;
+            }
+            
+            nextSlide() {
+                if (this.currentSlide < this.totalSlides - 1) {
+                    this.currentSlide++;
+                } else {
+                    this.currentSlide = 0; // Loop back to first slide
+                }
+                this.updateCarousel();
+            }
+            
+            previousSlide() {
+                if (this.currentSlide > 0) {
+                    this.currentSlide--;
+                } else {
+                    this.currentSlide = this.totalSlides - 1; // Loop to last slide
+                }
+                this.updateCarousel();
+            }
+            
+            goToSlide(slideIndex) {
+                this.currentSlide = slideIndex;
+                this.updateCarousel();
+            }
+            
+            startAutoSlide() {
+                this.autoSlideInterval = setInterval(() => {
+                    this.nextSlide();
+                }, 5000); // Change slide every 5 seconds
+            }
+            
+            stopAutoSlide() {
+                if (this.autoSlideInterval) {
+                    clearInterval(this.autoSlideInterval);
+                }
+            }
+        }
+        
+        // Initialize carousel when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new Carousel();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll animation for elements
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -615,82 +731,21 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        // Observar todos os elementos com a classe animate-on-scroll
-        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll para navegação
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.benefit-item, .feature-card');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
             });
-        });
-
-        // Efeito de hover nos cartões
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Loading nos botões CTA
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const originalText = this.textContent;
-                this.innerHTML = '<span class="loading"></span> Conectando...';
-                
-                setTimeout(() => {
-                    this.textContent = originalText;
-                }, 2000);
-            });
-        });
-
-        // Contador animado (se necessário no futuro)
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            
-            const timer = setInterval(() => {
-                start += increment;
-                element.textContent = Math.floor(start);
-                
-                if (start >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                }
-            }, 16);
-        }
-
-        // Performance otimizada para mobile
-        let ticking = false;
-        
-        function updateScrollEffects() {
-            // Qualquer efeito relacionado ao scroll pode ser adicionado aqui
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateScrollEffects);
-                ticking = true;
-            }
         });
     </script>
 </body>

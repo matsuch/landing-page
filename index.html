@@ -3,27 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatBot IA - Soluções Inteligentes</title>
+    <title>ChatBot IA - Automatize sua Comunicação</title>
+    <meta name="description" content="Solução de ChatBot com Inteligência Artificial para empresas que buscam excelência em atendimento automatizado">
     <style>
         :root {
-            --primary: #6b46c1;
-            --primary-dark: #4c1d95;
-            --accent: #a855f7;
-            --accent-light: #d8b4fe;
-            --accent-dark: #7c3aed;
-            --bg-light: #faf7ff;
-            --bg-dark: #4c1d95;
-            --text-primary: #581c87;
-            --text-secondary: #7c3aed;
-            --text-light: #ffffff;
-            --border: #e8e8e8;
-            --shadow: 0 8px 25px rgba(107, 70, 193, 0.1);
-            --shadow-hover: 0 15px 35px rgba(107, 70, 193, 0.2);
-            --transition: all 0.4s ease;
-            --whatsapp: #25d366;
-            --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            --gradient-luxury: linear-gradient(135deg, #4c1d95, #6b46c1, #a855f7);
+            --primary: #d4af37;
+            --primary-dark: #b8941f;
+            --secondary: #1a1a1a;
+            --background: #fafafa;
+            --surface: #ffffff;
+            --text: #1a1a1a;
+            --text-light: #6b7280;
+            --accent: #f59e0b;
+            --border: #e5e7eb;
+            --shadow: rgba(26, 26, 26, 0.08);
+            --shadow-lg: rgba(26, 26, 26, 0.12);
+            --gradient: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
         }
 
         * {
@@ -35,509 +30,597 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-light);
+            color: var(--text);
+            background-color: var(--background);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
 
         /* Header */
-        .header {
-            background: var(--gradient-luxury);
-            color: var(--text-light);
-            padding: 5rem 0;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
+        header {
+            background: var(--surface);
+            box-shadow: 0 2px 20px var(--shadow);
+            position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="luxury-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(168,85,247,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23luxury-grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .header > .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .header h1 {
-            font-size: clamp(2.2rem, 4vw, 3rem);
-            margin-bottom: 1.2rem;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(45deg, var(--accent), var(--accent-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            margin-bottom: 2.5rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            font-weight: 300;
-        }
-
-        .header-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            background: var(--gradient-accent);
-            color: var(--primary);
-            padding: 15px 30px;
-            border: 2px solid var(--accent);
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
-        }
-
-        .btn:hover {
-            background: var(--accent-light);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.5);
-            border-color: var(--accent-light);
-        }
-
-        .btn-whatsapp {
-            background: var(--gradient-accent);
-            color: var(--primary);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            border: 2px solid var(--accent);
-            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
-        }
-
-        .btn-whatsapp:hover {
-            background: var(--accent-light);
-            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.6);
-            transform: translateY(-3px);
-            border-color: var(--accent-light);
-        }
-
-        .whatsapp-icon {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
-
-        /* Main Content */
-        .main {
-            padding: 5rem 0;
-            background: linear-gradient(180deg, var(--bg-light), #f3f0ff);
-        }
-
-        .main h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 4rem;
-            color: var(--primary);
-            font-weight: 800;
-            position: relative;
-        }
-
-        .main h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-accent);
-            border-radius: 2px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 5rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 3rem 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(107, 70, 193, 0.08);
-            border: 2px solid transparent;
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(107, 70, 193, 0.15);
-            border-color: var(--accent);
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .service-card p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        /* Mission Section - Destacada */
-        .mission-section {
-            background: var(--gradient-luxury);
-            margin: 5rem 0;
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mission-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="luxury-pattern" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="7.5" cy="7.5" r="1" fill="rgba(168,85,247,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23luxury-pattern)"/></svg>');
-            opacity: 0.4;
-        }
-
-        .mission-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .mission {
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
-            backdrop-filter: blur(20px);
-            padding: 4.5rem 3rem;
-            border-radius: 25px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            border: 3px solid rgba(168, 85, 247, 0.3);
-            transform: translateY(0);
-            transition: var(--transition);
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .mission::before {
-            content: '👑';
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 3rem;
-            background: var(--gradient-accent);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 12px 25px rgba(168, 85, 247, 0.4);
-            border: 3px solid white;
-        }
-
-        .mission:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .mission-title {
-            color: var(--primary);
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .mission p {
-            font-size: 1.4rem;
-            color: var(--text-primary);
-            line-height: 1.9;
-            font-weight: 500;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
-        }
-
-        .mission-highlight {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--gradient-primary);
-            color: var(--text-light);
-            padding: 5rem 0 2.5rem 0;
-            text-align: center;
-            border-top: 4px solid var(--accent);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-pattern" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M 25 0 L 0 0 0 25" fill="none" stroke="rgba(168,85,247,0.08)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-pattern)"/></svg>');
-        }
-
-        .footer > .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer h3 {
-            font-size: 2.5rem;
-            margin-bottom: 2.5rem;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .about-text {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            line-height: 1.9;
-            opacity: 0.95;
-            text-align: left;
-            background: rgba(168, 85, 247, 0.1);
-            padding: 3rem;
-            border-radius: 20px;
-            border-left: 6px solid var(--accent);
-            margin-bottom: 3rem;
+            width: 100%;
+            z-index: 1000;
             backdrop-filter: blur(10px);
         }
 
-        .about-text strong {
-            color: var(--accent-light);
-            font-weight: 700;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
         }
 
-        .copyright {
-            border-top: 1px solid rgba(168, 85, 247, 0.3);
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--gradient);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Main */
+        main {
+            margin-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--surface) 0%, #f8f9fa 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23d4af37" fill-opacity="0.05"><circle cx="30" cy="30" r="1"/></g></svg>') repeat;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary);
+            padding: 16px 32px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: var(--surface);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px var(--shadow-lg);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--secondary);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--background);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            background: var(--surface);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-weight: 300;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 2rem;
-            margin-top: 2.5rem;
-            opacity: 0.8;
-            font-size: 1rem;
+            opacity: 0.7;
+            font-weight: 300;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-text {
-                text-align: center;
-                padding: 2rem;
+            .nav-links {
+                display: none;
             }
 
-            .header-buttons {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .footer h3 {
-                font-size: 2rem;
-            }
-
-            .mission-section {
-                padding: 3rem 0;
-                margin: 3rem 0;
-            }
-
-            .mission {
-                padding: 3rem 2rem;
-                border-radius: 20px;
-            }
-
-            .mission-title {
+            .section-title h2 {
                 font-size: 2.2rem;
             }
 
-            .mission p {
-                font-size: 1.2rem;
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .header {
-                padding: 4rem 0;
+            .cta-content {
+                padding: 2rem;
             }
-        }
 
-        /* Scroll Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Luxury pulse animation */
-        @keyframes luxury-glow {
-            0%, 100% {
-                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            .cta-content h2 {
+                font-size: 2rem;
             }
-            50% {
-                box-shadow: 0 30px 60px rgba(168, 85, 247, 0.3);
-            }
-        }
-
-        .mission {
-            animation: luxury-glow 5s ease-in-out infinite;
-        }
-
-        /* Premium accents */
-        .service-card:nth-child(2) {
-            background: linear-gradient(135deg, #ffffff, #fefefe);
-        }
-
-        .service-card:nth-child(2):hover {
-            background: linear-gradient(135deg, #ffffff, var(--accent-light));
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1>ChatBot IA & Automação</h1>
-            <p>Ganhe tempo, aumente produtividade e melhore seu atendimento com soluções inteligentes</p>
-            <div class="header-buttons">
-                <a href="http://wa.me/5547988924554" class="btn btn-whatsapp" target="_blank">
-                    <svg class="whatsapp-icon" viewBox="0 0 24 24">
-                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2M12.05 20.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.26-2.83-1.26-4.38 0-4.54 3.7-8.24 8.24-8.24s8.24 3.7 8.24 8.24-3.69 8.24-8.23 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18s.21-1.07.14-1.18c-.06-.1-.23-.17-.48-.29"/>
-                    </svg>
-                    Conversar agora
-                </a>
-            </div>
-        </div>
+    <header>
+        <nav class="container">
+            <div class="logo">ChatBot<span>AI</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Recursos</a></li>
+                <li><a href="#pricing">Preços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Começar Grátis</a>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="main" id="main">
-        <div class="container">
-            <h2>Nossos Serviços</h2>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <h3>ChatBot Inteligente</h3>
-                    <p>Desenvolvemos chatbots com IA avançada que oferecem suporte personalizado 24/7, melhorando a experiência do cliente e reduzindo custos operacionais.</p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <h3>Automação de Processos</h3>
-                    <p>Implementamos automações inteligentes que otimizam fluxos de trabalho, eliminam tarefas repetitivas e aumentam significativamente a produtividade.</p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <h3>Consultoria Digital</h3>
-                    <p>Oferecemos estratégias personalizadas para transformação digital, ajudando sua empresa a se adaptar às novas tecnologias e mercados.</p>
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content fade-in-up">
+                    <h1>Automatização <span>Premium</span><br>para Empresas de Elite</h1>
+                    <p>Solução de inteligência artificial exclusiva para organizações que exigem excelência operacional e resultados extraordinários</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary">
+                            Solicitar Demonstração Executiva
+                        </a>
+                        <a href="#features" class="btn-secondary">Conhecer Benefícios</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Excelência Operacional Automatizada</h2>
+                    <p>Tecnologia de ponta desenvolvida para organizações que não aceitam menos que a perfeição</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Precisão Executiva</h3>
+                        <p>Sistema de IA treinado especificamente para o padrão de excelência do seu segmento de mercado premium</p>
+                    </div>
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Performance Superior</h3>
+                        <p>Resposta instantânea 24/7 com qualidade de atendimento que supera expectativas dos clientes mais exigentes</p>
+                    </div>
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Segurança Corporativa</h3>
+                        <p>Criptografia de nível bancário e compliance total para proteger informações estratégicas da sua empresa</p>
+                    </div>
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">📊</div>
+                        <h3>Analytics Avançado</h3>
+                        <p>Relatórios executivos detalhados com insights estratégicos para tomada de decisões baseada em dados</p>
+                    </div>
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Customização Premium</h3>
+                        <p>Interface e fluxos personalizados que refletem a identidade única e valores da sua marca de luxo</p>
+                    </div>
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Escalabilidade Ilimitada</h3>
+                        <p>Infraestrutura enterprise que acompanha o crescimento acelerado do seu negócio premium</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>Taxa de Satisfação Premium</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2.3s</h3>
+                        <p>Tempo Médio de Resposta</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Empresas Premium Atendidas</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Suporte Executivo Dedicado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Eleve Sua Empresa ao Próximo Nível</h2>
+                    <p>Junte-se às organizações líderes que escolheram excelência em automação inteligente</p>
+                    <a href="#contact" class="btn-primary">
+                        Agendar Consultoria Estratégica
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Mission Section - Nova seção destacada -->
-    <section class="mission-section">
+    <footer id="contact">
         <div class="container">
-            <div class="mission-content">
-                <div class="mission fade-in">
-                    <h2 class="mission-title">Nossa <span class="mission-highlight">Missão</span></h2>
-                    <p>Nosso objetivo é simples: queremos que <span class="mission-highlight">todo empreendedor tenha acesso às mesmas ferramentas tecnológicas</span> que as grandes empresas usam, de forma fácil e sem complicação, para fazer seu negócio <span class="mission-highlight">crescer mais rápido</span>.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ChatBot AI Premium</h3>
+                    <p>Excelência em automação inteligente para empresas que definem padrões de mercado</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato Executivo</h3>
+                    <a href="mailto:executivo@chatbotai.com">executivo@chatbotai.com</a>
+                    <a href="tel:+551150000000">+55 (11) 5000-0000</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Endereço Corporativo</h3>
+                    <p>Av. Faria Lima, 3000<br>São Paulo - SP, 04538-132</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <h3>Quem somos nós</h3>
-            
-            <div class="about-text">
-                <p>Somos <strong>dois empreendedores apaixonados por tecnologia</strong> de Joinville - SC, unidos pela missão de <strong>democratizar o poder da inteligência artificial para pequenas e médias empresas</strong>. Acreditamos que toda empresa merece ter acesso às ferramentas que as grandes corporações já utilizam, transformando cada interação com seus clientes em algo mais humano, eficiente e significativo. <strong>De Joinville para o mundo, levamos o melhor da inovação catarinense direto para o seu negócio.</strong></p>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2025 ChatBot IA. Feito com ❤️ em Joinville - SC</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ChatBot AI Premium. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scroll para links internos
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
 
-        // Animação de entrada dos cards
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.background = 'var(--surface)';
+            }
+        });
+
+        // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -546,27 +629,44 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.classList.add('fade-in-up');
                 }
             });
         }, observerOptions);
 
-        // Observar elementos com animação
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
         });
 
-        // Feedback visual nos cards
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('click', function() {
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.stat-item h3');
+        const speed = 200;
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = counter.innerText;
+                const count = +counter.innerText.replace(/[^0-9.]/g, '');
+                const increment = target.includes('%') ? 1 : target.includes('s') ? 0.1 : 10;
+                
+                if (count < parseInt(target)) {
+                    counter.innerText = Math.ceil(count + increment) + target.replace(/[0-9.]/g, '');
+                    setTimeout(updateCount, speed);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCount();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
             });
-        });
 
-        console.log('Landing page carregada com sucesso! 🚀');
+            statsObserver.observe(counter.parentElement);
+        });
     </script>
 </body>
 </html>

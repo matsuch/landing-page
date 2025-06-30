@@ -284,38 +284,80 @@
             background: var(--primary-dark);
         }
 
-        /* Stats Section */
-        .stats {
+        /* Benefits Section */
+        .benefits {
             background: var(--white);
             padding: 4rem 0;
             margin-top: 3rem;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+        .benefits-title {
             text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .stat-item {
-            padding: 2rem 1rem;
-        }
-
-        .stat-number {
-            font-size: 3rem;
+        .benefits-title h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            margin-bottom: 0.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
         }
 
-        .stat-label {
+        .benefits-title p {
+            font-size: 1.2rem;
             color: var(--gray);
-            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            background: var(--light);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .benefit-item h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item p {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.6;
         }
 
         /* Footer */
@@ -416,6 +458,21 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1.2rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .benefit-item {
+                padding: 2rem 1.5rem;
+            }
+
+            .benefit-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
             }
         }
 
@@ -529,24 +586,27 @@
             </div>
         </div>
 
-        <section class="stats">
+        <section class="benefits">
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">97%</span>
-                        <span class="stat-label">Satisfação dos Clientes</span>
+                <div class="benefits-title">
+                    <h2>Benefícios para seu Negócio</h2>
+                    <p>Veja como nossa solução pode transformar seus resultados e impulsionar seu crescimento</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💰</div>
+                        <h3>Redução de Custos</h3>
+                        <p>Diminua até 80% dos custos operacionais com atendimento automatizado, eliminando a necessidade de grandes equipes de suporte.</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Atendimento Ininterrupto</span>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📈</div>
+                        <h3>Aumento das Vendas</h3>
+                        <p>Converta mais leads em clientes com atendimento imediato e personalizado, aumentando suas vendas em até 300%.</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">70%</span>
-                        <span class="stat-label">Redução de No-shows</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">5x</span>
-                        <span class="stat-label">Aumento de Conversões</span>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <h3>Eficiência Máxima</h3>
+                        <p>Processe milhares de conversas simultâneas sem perder qualidade, escalando seu negócio sem limites de capacidade.</p>
                     </div>
                 </div>
             </div>

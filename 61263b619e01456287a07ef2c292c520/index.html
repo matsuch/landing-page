@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartamentos de Luxo no Litoral de SC | Corretor Especializado</title>
+    <meta name="description" content="Especialista em apartamentos de alto luxo no litoral catarinense. Encontre seu imóvel dos sonhos com vista para o mar em Balneário Camboriú, Jurerê e região.">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2d5a87;
+            --secondary: #d4af37;
+            --accent: #f7f7f7;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --background: #ffffff;
+            --gradient: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 54, 93, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(45, 90, 135, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="%23074a7a"/><rect x="0" y="0" width="1920" height="1080" fill="url(%23paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23087ea4"/><stop offset="100%" style="stop-color:%23164e63"/></linearGradient></defs></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .services {
+            background: var(--accent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .properties {
+            background: white;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .property-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .property-image {
+            height: 250px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .property-info {
+            padding: 1.5rem;
+        }
+
+        .property-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .property-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .property-details {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .about {
+            background: var(--primary);
+            color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            height: 400px;
+            background: var(--secondary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .contact {
+            background: var(--accent);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-light);
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .properties-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🏖️ Luxo Litoral SC</div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#properties">Imóveis</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Apartamentos de Luxo no Litoral Catarinense</h1>
+            <p>Encontre seu imóvel dos sonhos com vista para o mar. Especialista em apartamentos de alto padrão em Balneário Camboriú, Jurerê Internacional e região.</p>
+            <a href="#contact" class="cta-button">Quero Conhecer os Imóveis</a>
+        </div>
+    </section>
+
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Serviços Exclusivos</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Apartamentos de Alto Luxo</h3>
+                    <p>Seleção exclusiva de apartamentos premium com vista para o mar, acabamentos de primeira linha e localização privilegiada.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Consultoria Personalizada</h3>
+                    <p>Atendimento individual para encontrar o imóvel perfeito de acordo com suas necessidades e perfil de investimento.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Análise de Mercado</h3>
+                    <p>Relatórios detalhados sobre valorização, tendências do mercado imobiliário e potencial de investimento na região.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔑</div>
+                    <h3>Processo Completo</h3>
+                    <p>Acompanhamento total desde a escolha do imóvel até a entrega das chaves, incluindo documentação e financiamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="properties" class="section properties">
+        <div class="container">
+            <h2 class="section-title">Imóveis em Destaque</h2>
+            <div class="properties-grid">
+                <div class="property-card">
+                    <div class="property-image">Vista Mar - Balneário Camboriú</div>
+                    <div class="property-info">
+                        <h3 class="property-title">Cobertura Frente Mar</h3>
+                        <div class="property-price">R$ 2.800.000</div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span>🛏️</span> 4 quartos
+                            </div>
+                            <div class="detail-item">
+                                <span>🚿</span> 5 banheiros
+                            </div>
+                            <div class="detail-item">
+                                <span>📏</span> 280m²
+                            </div>
+                        </div>
+                        <p>Cobertura duplex com vista panorâmica para o mar, piscina privativa, churrasqueira e acabamentos de luxo.</p>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="property-image">Jurerê Internacional</div>
+                    <div class="property-info">
+                        <h3 class="property-title">Apartamento Jurerê</h3>
+                        <div class="property-price">R$ 1.950.000</div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span>🛏️</span> 3 quartos
+                            </div>
+                            <div class="detail-item">
+                                <span>🚿</span> 3 banheiros
+                            </div>
+                            <div class="detail-item">
+                                <span>📏</span> 180m²
+                            </div>
+                        </div>
+                        <p>Apartamento no melhor condomínio de Jurerê, com vista mar, mobiliado e decorado por renomado arquiteto.</p>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="property-image">Praia Brava - Itajaí</div>
+                    <div class="property-info">
+                        <h3 class="property-title">Loft Praia Brava</h3>
+                        <div class="property-price">R$ 1.200.000</div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span>🛏️</span> 2 quartos
+                            </div>
+                            <div class="detail-item">
+                                <span>🚿</span> 2 banheiros
+                            </div>
+                            <div class="detail-item">
+                                <span>📏</span> 120m²
+                            </div>
+                        </div>
+                        <p>Loft moderno com design contemporâneo, varanda gourmet e acesso direto à praia mais exclusiva da região.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Especialista em Imóveis de Luxo</h2>
+                    <p>Com mais de 15 anos de experiência no mercado imobiliário catarinense, sou especializado em apartamentos de alto luxo no litoral de Santa Catarina.</p>
+                    <p>Minha expertise inclui profundo conhecimento das melhores localizações, tendências do mercado e relacionamento exclusivo com as principais construtoras e incorporadoras da região.</p>
+                    <p>Tenho o prazer de ajudar clientes exigentes a encontrar o imóvel dos seus sonhos, seja para moradia ou investimento, sempre com total transparência e profissionalismo.</p>
+                    <div style="margin-top: 2rem;">
+                        <strong>🏆 + de 200 imóveis de luxo vendidos</strong><br>
+                        <strong>⭐ Corretor Certificado CRECI/SC</strong><br>
+                        <strong>🎯 Especialista em Mercado de Luxo</strong>
+                    </div>
+                </div>
+                <div class="about-image">
+                    Foto do Corretor Especialista
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Vamos Conversar</h3>
+                    <p>Estou pronto para ajudá-lo a encontrar o apartamento de luxo perfeito no litoral catarinense. Entre em contato e vamos agendar uma visita.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>WhatsApp</strong><br>
+                            (47) 99999-9999
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>E-mail</strong><br>
+                            contato@luxolitoralsc.com.br
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Escritório</strong><br>
+                            Balneário Camboriú, SC
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <strong>Horário</strong><br>
+                            Seg a Sex: 8h às 18h<br>
+                            Sáb: 8h às 14h
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Interesse</label>
+                        <select id="interest" name="interest" style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px;">
+                            <option value="">Selecione seu interesse</option>
+                            <option value="comprar">Comprar Apartamento</option>
+                            <option value="investir">Investimento</option>
+                            <option value="consultoria">Consultoria</option>
+                            <option value="avaliacao">Avaliação de Imóvel</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" placeholder="Conte-me sobre seu interesse e preferências..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Luxo Litoral SC - Corretor Especialista em Imóveis de Luxo. Todos os direitos reservados.</p>
+            <p>CRECI/SC 00000-J | Ética, Profissionalismo e Resultados</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5547999999999?text=Olá! Tenho interesse em apartamentos de luxo no litoral catarinense." class="whatsapp-float" target="_blank">
+        💬
+    </a>
+
+    <script>
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Formulário de contato
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+            
+            // Simular envio do formulário
+            alert('Obrigado pelo seu interesse! Entrarei em contato em breve.');
+            this.reset();
+        });
+
+        // Animação suave ao scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 54, 93, 0.98)';
+            } else {
+                header.style.background = 'rgba(26, 54, 93, 0.95)';
+            }
+        });
+
+        // Animação de entrada dos cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animação aos cards
+        document.querySelectorAll('.service-card, .property-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Máscara para telefone
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+            value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>

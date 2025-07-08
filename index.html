@@ -736,8 +736,7 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1udGZlY3V1a3lkcXZzbHJodGhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkwODE1MTEsImV4cCI6MjA2NDY1NzUxMX0.EPmnQFnQP7SCTvt7SIRAx18z0gkv0STGiIQD4ijd6B4';
         
         // Inicializar Supabase
-        const { createClient } = supabase;
-        const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

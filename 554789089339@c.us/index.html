@@ -841,20 +841,6 @@
             // Salvar no Supabase
             const result = await saveToSupabase(formData);
             
-            if (result.success) {
-                successMessage.style.display = 'block';
-                document.getElementById('contactForm').reset();
-                
-                // Redirecionar para WhatsApp após 2 segundos
-                setTimeout(() => {
-                    const whatsappMessage = `Olá! Acabei de preencher o formulário na landing page.%0A%0A*Dados:*%0ANome: ${formData.name}%0AE-mail: ${formData.email}%0AWhatsApp: ${formData.phone}%0ANegócio: ${formData.business}%0AObjetivo: ${formData.objective}%0A%0A*Mensagem:*%0A${formData.message}`;
-                    window.open(`https://wa.me/5547988924554?text=${whatsappMessage}`, '_blank');
-                }, 2000);
-            } else {
-                errorMessage.style.display = 'block';
-                errorMessage.textContent = `❌ Erro: ${result.error}`;
-            }
-            
             // Reabilitar botão
             submitBtn.disabled = false;
             submitBtn.textContent = '🚀 Criar Minha Landing Page';

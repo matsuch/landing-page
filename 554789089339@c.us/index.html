@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Pages com IA via WhatsApp | Crie Páginas Profissionais Instantaneamente</title>
-    <meta name="description" content="Revolucione seu negócio digital! Crie landing pages profissionais usando inteligência artificial diretamente pelo WhatsApp. Rápido, fácil e sem complicações.">
-    <meta name="keywords" content="landing page, inteligência artificial, WhatsApp, infoprodutos, páginas web, IA, marketing digital">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Landing Pages com IA via WhatsApp - Crie sua LP em minutos</title>
+    <meta name="description" content="Crie landing pages profissionais usando inteligência artificial através do WhatsApp. Rápido, fácil e sem complicações.">
+    <meta name="keywords" content="landing page, IA, WhatsApp, criação automática, marketing digital">
     <style>
         :root {
             --primary: #25D366;
-            --primary-dark: #20B358;
+            --primary-dark: #1DA851;
             --secondary: #128C7E;
-            --accent: #DCF8C6;
-            --text-dark: #1a1a1a;
-            --text-light: #666;
-            --background: #ffffff;
-            --background-light: #f8f9fa;
-            --border: #e0e0e0;
-            --success: #4CAF50;
-            --gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --accent: #FF6B6B;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --background: #FFFFFF;
+            --section-bg: #F8F9FA;
+            --border: #E1E8ED;
         }
 
         * {
@@ -31,30 +26,28 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
-            background: var(--background);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            background-color: var(--background);
         }
 
         /* Header */
         header {
-            background: var(--background);
-            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
         }
 
         nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -62,13 +55,13 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: bold;
             color: var(--primary);
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            list-style: none;
             gap: 2rem;
         }
 
@@ -83,9 +76,26 @@
             color: var(--primary);
         }
 
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
         /* Hero Section */
         .hero {
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 120px 0 80px;
             text-align: center;
@@ -100,56 +110,88 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="80" fill="url(%23a)"/></svg>');
-            opacity: 0.3;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,100 1000,0 1000,100"/></svg>');
+            background-size: cover;
         }
 
         .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
             position: relative;
             z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
         }
 
-        .cta-button {
-            display: inline-block;
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-primary {
             background: white;
             color: var(--primary);
-            padding: 15px 40px;
+            padding: 1rem 2rem;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 50px;
             font-weight: 600;
-            font-size: 1.1rem;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 2px solid white;
         }
 
-        .cta-button:hover {
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
         }
 
         /* Features Section */
         .features {
             padding: 80px 0;
-            background: var(--background-light);
+            background: var(--section-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
-            font-weight: 700;
             margin-bottom: 3rem;
             color: var(--text-dark);
         }
@@ -158,7 +200,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .feature-card {
@@ -166,7 +207,7 @@
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s;
         }
 
@@ -180,8 +221,6 @@
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
             margin-bottom: 1rem;
             color: var(--text-dark);
         }
@@ -191,7 +230,7 @@
             line-height: 1.6;
         }
 
-        /* How It Works */
+        /* How it Works */
         .how-it-works {
             padding: 80px 0;
             background: white;
@@ -199,33 +238,32 @@
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .step {
             text-align: center;
-            padding: 1.5rem;
+            position: relative;
         }
 
         .step-number {
-            display: inline-block;
             width: 60px;
             height: 60px;
-            background: var(--gradient);
+            background: var(--primary);
             color: white;
             border-radius: 50%;
-            line-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
         }
 
         .step h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             color: var(--text-dark);
         }
 
@@ -236,38 +274,43 @@
         /* Benefits */
         .benefits {
             padding: 80px 0;
-            background: var(--background-light);
+            background: var(--section-bg);
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
 
-        .benefit-item {
+        .benefit {
             background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 2rem;
+            border-radius: 15px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 1rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
         .benefit-icon {
             font-size: 2rem;
             color: var(--primary);
+            margin-top: 0.5rem;
         }
 
-        .benefit-text {
-            font-weight: 500;
+        .benefit h3 {
+            margin-bottom: 0.5rem;
             color: var(--text-dark);
         }
 
+        .benefit p {
+            color: var(--text-light);
+        }
+
         /* Contact Form */
-        .contact-form {
+        .contact {
             padding: 80px 0;
             background: white;
         }
@@ -275,24 +318,10 @@
         .form-container {
             max-width: 600px;
             margin: 0 auto;
-            background: var(--background-light);
+            background: var(--section-bg);
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .form-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .form-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         .form-group {
@@ -302,52 +331,69 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
             color: var(--text-dark);
+            font-weight: 600;
         }
 
-        .form-group input {
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 12px 15px;
+            padding: 1rem;
             border: 2px solid var(--border);
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
             transition: border-color 0.3s;
         }
 
-        .form-group input:focus {
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--primary);
         }
 
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
         .submit-btn {
-            width: 100%;
-            background: var(--gradient);
+            background: var(--primary);
             color: white;
-            padding: 15px;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
+            border-radius: 30px;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            width: 100%;
         }
 
         .submit-btn:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
         }
 
         /* Footer */
         footer {
             background: var(--text-dark);
             color: white;
-            padding: 3rem 0 1rem;
+            padding: 40px 0;
             text-align: center;
         }
 
         .footer-content {
-            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .footer-links {
@@ -355,6 +401,7 @@
             justify-content: center;
             gap: 2rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
@@ -367,63 +414,25 @@
             color: var(--primary);
         }
 
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 1rem;
-            color: #888;
-        }
-
-        /* WhatsApp Float Button */
+        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background: var(--primary);
             color: white;
-            width: 60px;
-            height: 60px;
+            padding: 15px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            font-size: 1.5rem;
             z-index: 1000;
             transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-float:hover {
+            background: var(--primary-dark);
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .form-container {
-                padding: 2rem;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
         }
 
         /* Animations */
@@ -438,172 +447,298 @@
             }
         }
 
-        .animate-on-scroll {
+        .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.6s ease-out;
         }
 
-        .animate-on-scroll.animated {
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <nav class="container">
-            <div class="logo">🚀 LandingPageIA</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#como-funciona">Como Funciona</a></li>
-                <li><a href="#beneficios">Benefícios</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+        <nav>
+            <a href="#" class="logo">🤖 LandingIA</a>
+            <div class="nav-links">
+                <a href="#recursos">Recursos</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <a href="#contato" class="cta-button">Começar Agora</a>
         </nav>
     </header>
 
-    <section id="inicio" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Crie Landing Pages Profissionais<br>com IA via WhatsApp</h1>
-                <p>Revolucione seu negócio digital! Solicite criação e edição de páginas web usando inteligência artificial diretamente pelo WhatsApp. Rápido, fácil e sem complicações.</p>
-                <a href="#contato" class="cta-button">Quero Conhecer Agora</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Crie Landing Pages Profissionais com IA via WhatsApp</h1>
+            <p>Transforme suas ideias em páginas de alta conversão em minutos. Sem código, sem complicações, apenas resultados.</p>
+            <div class="hero-buttons">
+                <a href="#contato" class="btn-primary">Criar Minha Landing Page</a>
+                <a href="#como-funciona" class="btn-secondary">Ver Como Funciona</a>
             </div>
         </div>
     </section>
 
-    <section class="features">
+    <!-- Features Section -->
+    <section class="features" id="recursos">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Por que Escolher Nossa Solução?</h2>
+            <h2 class="section-title fade-in">Recursos Exclusivos</h2>
             <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">🤖</div>
-                    <h3>Inteligência Artificial Avançada</h3>
-                    <p>Nossa IA cria páginas personalizadas e otimizadas para conversão, adaptadas ao seu nicho específico.</p>
+                    <h3>Inteligência Artificial</h3>
+                    <p>Nossa IA avançada interpreta suas necessidades e cria páginas personalizadas automaticamente.</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">📱</div>
-                    <h3>Direto pelo WhatsApp</h3>
-                    <p>Sem complicações! Converse naturalmente via WhatsApp e receba sua landing page pronta em minutos.</p>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💬</div>
+                    <h3>Via WhatsApp</h3>
+                    <p>Converse naturalmente pelo WhatsApp. Sem formulários complexos ou interfaces complicadas.</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">⚡</div>
-                    <h3>Entrega Instantânea</h3>
-                    <p>Receba sua página web profissional em poucos minutos, pronta para capturar leads e gerar vendas.</p>
+                    <h3>Criação Rápida</h3>
+                    <p>Sua landing page pronta em minutos, não em dias. Agilidade sem comprometer a qualidade.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📱</div>
+                    <h3>Totalmente Responsivo</h3>
+                    <p>Páginas que se adaptam perfeitamente a qualquer dispositivo: desktop, tablet ou mobile.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Design Profissional</h3>
+                    <p>Templates modernos e otimizados para conversão, criados por designers experientes.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Deploy Automático</h3>
+                    <p>Suas páginas ficam online automaticamente, prontas para receber visitantes e gerar resultados.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="como-funciona" class="how-it-works">
+    <!-- How it Works -->
+    <section class="how-it-works" id="como-funciona">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Como Funciona</h2>
+            <h2 class="section-title fade-in">Como Funciona</h2>
             <div class="steps">
-                <div class="step animate-on-scroll">
+                <div class="step fade-in">
                     <div class="step-number">1</div>
-                    <h3>Adicione no WhatsApp</h3>
-                    <p>Salve nosso número e inicie a conversa com nossa IA especializada</p>
+                    <h3>Fale com Nossa IA</h3>
+                    <p>Envie uma mensagem no WhatsApp descrevendo que tipo de landing page você precisa.</p>
                 </div>
-                <div class="step animate-on-scroll">
+                <div class="step fade-in">
                     <div class="step-number">2</div>
-                    <h3>Descreva sua Necessidade</h3>
-                    <p>Conte sobre seu negócio, produto ou serviço que precisa de uma landing page</p>
+                    <h3>IA Analisa e Cria</h3>
+                    <p>Nossa inteligência artificial processa sua solicitação e gera uma página personalizada.</p>
                 </div>
-                <div class="step animate-on-scroll">
+                <div class="step fade-in">
                     <div class="step-number">3</div>
-                    <h3>Receba sua Página</h3>
-                    <p>Em minutos, receba sua landing page profissional, responsiva e otimizada</p>
+                    <h3>Revise e Aprove</h3>
+                    <p>Você recebe um preview da página e pode solicitar ajustes antes da publicação.</p>
                 </div>
-                <div class="step animate-on-scroll">
+                <div class="step fade-in">
                     <div class="step-number">4</div>
-                    <h3>Solicite Ajustes</h3>
-                    <p>Precisa de mudanças? Converse conosco e faça quantos ajustes precisar</p>
+                    <h3>Página Online</h3>
+                    <p>Sua landing page fica disponível com um link exclusivo, pronta para converter visitantes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="beneficios" class="benefits">
+    <!-- Benefits -->
+    <section class="benefits" id="beneficios">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Benefícios Exclusivos</h2>
+            <h2 class="section-title fade-in">Por Que Escolher Nossa Solução?</h2>
             <div class="benefits-grid">
-                <div class="benefit-item animate-on-scroll">
+                <div class="benefit fade-in">
                     <div class="benefit-icon">💰</div>
-                    <div class="benefit-text">Economize milhares em desenvolvimento</div>
+                    <div>
+                        <h3>Economia de Tempo e Dinheiro</h3>
+                        <p>Elimine semanas de desenvolvimento e milhares de reais em custos de criação.</p>
+                    </div>
                 </div>
-                <div class="benefit-item animate-on-scroll">
+                <div class="benefit fade-in">
                     <div class="benefit-icon">🎯</div>
-                    <div class="benefit-text">Páginas otimizadas para alta conversão</div>
+                    <div>
+                        <h3>Otimizado para Conversão</h3>
+                        <p>Páginas criadas com base em melhores práticas de UX/UI e marketing digital.</p>
+                    </div>
                 </div>
-                <div class="benefit-item animate-on-scroll">
-                    <div class="benefit-icon">📱</div>
-                    <div class="benefit-text">100% responsivo para todos os dispositivos</div>
-                </div>
-                <div class="benefit-item animate-on-scroll">
-                    <div class="benefit-icon">🚀</div>
-                    <div class="benefit-text">Deploy automático e hospedagem gratuita</div>
-                </div>
-                <div class="benefit-item animate-on-scroll">
+                <div class="benefit fade-in">
                     <div class="benefit-icon">🔧</div>
-                    <div class="benefit-text">Edições ilimitadas via WhatsApp</div>
+                    <div>
+                        <h3>Sem Conhecimento Técnico</h3>
+                        <p>Você não precisa saber nada de código ou design. Apenas descreva o que precisa.</p>
+                    </div>
                 </div>
-                <div class="benefit-item animate-on-scroll">
-                    <div class="benefit-icon">⚡</div>
-                    <div class="benefit-text">Entrega em menos de 10 minutos</div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">📊</div>
+                    <div>
+                        <h3>SEO Otimizado</h3>
+                        <p>Todas as páginas são criadas seguindo as melhores práticas de SEO para máxima visibilidade.</p>
+                    </div>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">🔄</div>
+                    <div>
+                        <h3>Atualizações Ilimitadas</h3>
+                        <p>Faça quantas alterações precisar via WhatsApp, sem custo adicional.</p>
+                    </div>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">🏆</div>
+                    <div>
+                        <h3>Resultados Comprovados</h3>
+                        <p>Páginas que convertem até 3x mais que templates tradicionais.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="contact-form">
+    <!-- Contact Form -->
+    <section class="contact" id="contato">
         <div class="container">
-            <div class="form-container animate-on-scroll">
-                <h2 class="form-title">Comece Agora Mesmo!</h2>
-                <p class="form-subtitle">Preencha o formulário e descubra como revolucionar seu negócio digital com landing pages criadas por IA via WhatsApp.</p>
-                <form id="leadForm">
+            <h2 class="section-title fade-in">Comece Agora Mesmo</h2>
+            <div class="form-container fade-in">
+                <div class="success-message" id="successMessage">
+                    ✅ Mensagem enviada com sucesso! Em breve entraremos em contato.
+                </div>
+                <div class="error-message" id="errorMessage">
+                    ❌ Erro ao enviar mensagem. Tente novamente ou entre em contato via WhatsApp.
+                </div>
+                <form id="contactForm">
                     <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+                        <label for="name">Nome Completo *</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="telefone">Telefone/WhatsApp</label>
-                        <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                        <label for="phone">WhatsApp *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" required>
                     </div>
-                    <button type="submit" class="submit-btn">Quero Conhecer a Solução</button>
+                    <div class="form-group">
+                        <label for="business">Tipo de Negócio *</label>
+                        <select id="business" name="business" required>
+                            <option value="">Selecione...</option>
+                            <option value="ecommerce">E-commerce</option>
+                            <option value="servicos">Serviços</option>
+                            <option value="consultoria">Consultoria</option>
+                            <option value="saude">Saúde</option>
+                            <option value="educacao">Educação</option>
+                            <option value="tecnologia">Tecnologia</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="objective">Objetivo da Landing Page *</label>
+                        <select id="objective" name="objective" required>
+                            <option value="">Selecione...</option>
+                            <option value="vendas">Vendas de Produto/Serviço</option>
+                            <option value="leads">Captação de Leads</option>
+                            <option value="evento">Divulgação de Evento</option>
+                            <option value="aplicativo">Download de App</option>
+                            <option value="newsletter">Newsletter/Blog</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Descreva sua Necessidade</label>
+                        <textarea id="message" name="message" placeholder="Conte-nos mais sobre o que você precisa..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        🚀 Criar Minha Landing Page
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo" style="font-size: 2rem; margin-bottom: 1rem;">🚀 LandingPageIA</div>
-                <p>Criando o futuro das landing pages com inteligência artificial</p>
-            </div>
+        <div class="footer-content">
             <div class="footer-links">
-                <a href="#inicio">Início</a>
+                <a href="#recursos">Recursos</a>
                 <a href="#como-funciona">Como Funciona</a>
                 <a href="#beneficios">Benefícios</a>
                 <a href="#contato">Contato</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 LandingPageIA. Todos os direitos reservados.</p>
-            </div>
+            <p>&copy; 2024 LandingIA. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre as landing pages criadas por IA via WhatsApp." class="whatsapp-float" target="_blank">
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
         📱
     </a>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // Smooth scrolling for navigation links
+        // Configuração do Supabase
+        const SUPABASE_URL = 'https://mntfecuukydqvslrhtho.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1udGZlY3V1a3lkcXZzbHJodGhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkwODE1MTEsImV4cCI6MjA2NDY1NzUxMX0.EPmnQFnQP7SCTvt7SIRAx18z0gkv0STGiIQD4ijd6B4';
+        
+        // Inicializar Supabase
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -617,113 +752,129 @@
             });
         });
 
-        // Animate on scroll
+        // Animações on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Form submission
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nome = document.getElementById('nome').value;
-            const telefone = document.getElementById('telefone').value;
-            const email = document.getElementById('email').value;
-            
-            // Simulate form submission
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-            
-            // Simulate API call
-            setTimeout(() => {
-                submitBtn.textContent = 'Enviado com Sucesso!';
-                submitBtn.style.background = 'var(--success)';
-                
-                // Reset form
-                setTimeout(() => {
-                    this.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = 'var(--gradient)';
-                    submitBtn.disabled = false;
-                    
-                    // Show success message
-                    alert('Obrigado! Entraremos em contato em breve para apresentar nossa solução revolucionária!');
-                }, 2000);
-            }, 1500);
-        });
-
-        // Phone mask
-        document.getElementById('telefone').addEventListener('input', function(e) {
-            let value = e.target.value;
-            value = value.replace(/\D/g, '');
-            value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
-            value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+        // Máscara para telefone
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 11) {
+                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 6) {
+                value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+            } else if (value.length >= 2) {
+                value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+            }
             e.target.value = value;
         });
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'var(--background)';
-                header.style.backdropFilter = 'none';
+        // Função para salvar no Supabase
+        async function saveToSupabase(data) {
+            try {
+                const { data: result, error } = await supabaseClient
+                    .from('landing_leads')
+                    .insert([
+                        {
+                            name: data.name,
+                            email: data.email,
+                            phone: data.phone,
+                            business_type: data.business,
+                            objective: data.objective,
+                            message: data.message,
+                            created_at: new Date().toISOString(),
+                            source: 'landing_page'
+                        }
+                    ]);
+
+                if (error) {
+                    throw error;
+                }
+
+                return { success: true, data: result };
+            } catch (error) {
+                console.error('Erro ao salvar no Supabase:', error);
+                return { success: false, error: error.message };
             }
-        });
+        }
 
-        // Floating WhatsApp button animation
-        const whatsappBtn = document.querySelector('.whatsapp-float');
-        let isVisible = false;
-
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300 && !isVisible) {
-                whatsappBtn.style.display = 'flex';
-                whatsappBtn.style.animation = 'fadeInUp 0.5s ease forwards';
-                isVisible = true;
-            } else if (window.scrollY <= 300 && isVisible) {
-                whatsappBtn.style.animation = 'fadeInUp 0.5s ease reverse';
+        // Envio do formulário
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Resetar mensagens
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Desabilitar botão
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            // Coletar dados do formulário
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                business: document.getElementById('business').value,
+                objective: document.getElementById('objective').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Salvar no Supabase
+            const result = await saveToSupabase(formData);
+            
+            if (result.success) {
+                successMessage.style.display = 'block';
+                document.getElementById('contactForm').reset();
+                
+                // Redirecionar para WhatsApp após 2 segundos
                 setTimeout(() => {
-                    whatsappBtn.style.display = 'none';
-                }, 500);
-                isVisible = false;
+                    const whatsappMessage = `Olá! Acabei de preencher o formulário na landing page.%0A%0A*Dados:*%0ANome: ${formData.name}%0AE-mail: ${formData.email}%0AWhatsApp: ${formData.phone}%0ANegócio: ${formData.business}%0AObjetivo: ${formData.objective}%0A%0A*Mensagem:*%0A${formData.message}`;
+                    window.open(`https://wa.me/5547988924554?text=${whatsappMessage}`, '_blank');
+                }, 2000);
+            } else {
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = `❌ Erro: ${result.error}`;
             }
+            
+            // Reabilitar botão
+            submitBtn.disabled = false;
+            submitBtn.textContent = '🚀 Criar Minha Landing Page';
         });
 
-        // Add pulsing animation to WhatsApp button
-        setInterval(() => {
-            if (isVisible) {
-                whatsappBtn.style.animation = 'pulse 2s infinite';
-            }
-        }, 3000);
-
-        // Add pulse animation CSS
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.1); }
-                100% { transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
+        // Efeito de digitação no hero
+        let heroText = "Crie Landing Pages Profissionais com IA via WhatsApp";
+        let heroSubtext = "Transforme suas ideias em páginas de alta conversão em minutos. Sem código, sem complicações, apenas resultados.";
+        
+        // Adicionar efeito de fade suave aos cards
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.querySelectorAll('.feature-card, .benefit, .step').forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 500);
+        });
     </script>
 </body>
 </html>

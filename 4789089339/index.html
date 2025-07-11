@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trader de Ouro - Estratégias Milionárias em Day Trade</title>
+    <meta name="description" content="Descubra as estratégias que geraram milhões no day trade. Aprenda com o Trader de Ouro e transforme sua vida financeira.">
+    <style>
+        :root {
+            --primary: #FFD700;
+            --secondary: #000000;
+            --accent: #FFA500;
+            --text-light: #FFFFFF;
+            --text-dark: #1a1a1a;
+            --gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            --dark-gradient: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--dark-gradient);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--dark-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            to { text-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: var(--secondary);
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--secondary);
+            padding: 4rem 0;
+            border-top: 3px solid var(--primary);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: var(--dark-gradient);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Chart Section */
+        .charts {
+            background: var(--dark-gradient);
+            padding: 4rem 0;
+        }
+
+        .charts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .chart-card {
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid var(--primary);
+        }
+
+        .chart-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .chart-visual {
+            height: 200px;
+            background: linear-gradient(to top, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-visual::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(0,0,0,0.1) 10px,
+                rgba(0,0,0,0.1) 20px
+            );
+        }
+
+        .chart-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--secondary);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--secondary);
+            padding: 4rem 0;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--dark-gradient);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: var(--gradient);
+            color: var(--secondary);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .cta-button-black {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button-black:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gradient);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 2px solid var(--primary);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Trader de Ouro</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#estrategias">Estratégias</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Trader de Ouro</h1>
+                <p class="hero-subtitle">O Sistema que Gerou Milhões no Day Trade</p>
+                <p class="hero-description">
+                    Descubra as estratégias EXCLUSIVAS que me fizeram gerar mais de R$ 5 MILHÕES em apenas 2 anos de trading. 
+                    Resultados COMPROVADOS que superam qualquer índice do mercado financeiro brasileiro.
+                </p>
+                <button class="cta-button" onclick="scrollToSection('contato')">
+                    QUERO MULTIPLICAR MEU DINHEIRO AGORA
+                </button>
+            </div>
+        </section>
+
+        <section id="resultados" class="stats">
+            <div class="stats-container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">R$ 5.2M</div>
+                        <div class="stat-label">Lucro Total Gerado</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">847%</div>
+                        <div class="stat-label">Retorno Anual</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Taxa de Acerto</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1,247</div>
+                        <div class="stat-label">Operações Vencedoras</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="estrategias" class="charts">
+            <div class="charts-container">
+                <h2 class="section-title">Performance Superior aos Índices</h2>
+                <div class="chart-grid">
+                    <div class="chart-card">
+                        <h3 class="chart-title">Trader de Ouro vs IBOVESPA</h3>
+                        <div class="chart-visual">
+                            <div class="chart-percentage">+847%</div>
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; color: var(--primary);">
+                            <strong>Trader de Ouro: +847%</strong><br>
+                            IBOVESPA: +12%
+                        </p>
+                    </div>
+                    <div class="chart-card">
+                        <h3 class="chart-title">Trader de Ouro vs CDI</h3>
+                        <div class="chart-visual">
+                            <div class="chart-percentage">+623%</div>
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; color: var(--primary);">
+                            <strong>Trader de Ouro: +623%</strong><br>
+                            CDI: +8.5%
+                        </p>
+                    </div>
+                    <div class="chart-card">
+                        <h3 class="chart-title">Trader de Ouro vs S&P 500</h3>
+                        <div class="chart-visual">
+                            <div class="chart-percentage">+734%</div>
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; color: var(--primary);">
+                            <strong>Trader de Ouro: +734%</strong><br>
+                            S&P 500: +18%
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="testimonials">
+            <div class="testimonials-container">
+                <h2 class="section-title">O Que Meus Alunos Dizem</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "Em 6 meses seguindo as estratégias do Trader de Ouro, consegui multiplicar meu capital em 15x. 
+                            Nunca pensei que seria possível ter essa rentabilidade no day trade."
+                        </p>
+                        <p class="testimonial-author">- Carlos M., Empresário</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "Saí do zero absoluto e hoje tenho uma renda mensal de R$ 50.000 só com trading. 
+                            As estratégias são simples e extremamente eficazes."
+                        </p>
+                        <p class="testimonial-author">- Ana P., Trader</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "O método do Trader de Ouro me permitiu largar meu emprego e viver exclusivamente de trading. 
+                            Minha vida mudou completamente!"
+                        </p>
+                        <p class="testimonial-author">- Roberto S., Ex-Funcionário Público</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="final-cta">
+            <h2>Chegou a Sua Hora de Enriquecer!</h2>
+            <p>Não perca mais tempo perdendo dinheiro com métodos que não funcionam.</p>
+            <p>Acesse AGORA as estratégias que geraram MILHÕES!</p>
+            <button class="cta-button-black" onclick="contactAction()">
+                QUERO ACESSO IMEDIATO ÀS ESTRATÉGIAS
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Trader de Ouro. Todos os direitos reservados.</p>
+            <p>Aviso Legal: Investimentos envolvem riscos. Rentabilidade passada não garante resultados futuros.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Contact action
+        function contactAction() {
+            // Simula redirecionamento para WhatsApp ou formulário
+            alert('Redirecionando para WhatsApp: (11) 99999-9999');
+            // window.open('https://wa.me/5511999999999?text=Quero%20conhecer%20as%20estratégias%20do%20Trader%20de%20Ouro', '_blank');
+        }
+
+        // Animate counters on scroll
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = counter.innerText;
+                const numericValue = parseInt(target.replace(/[^\d]/g, ''));
+                let current = 0;
+                const increment = numericValue / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= numericValue) {
+                        current = numericValue;
+                        clearInterval(timer);
+                    }
+                    if (target.includes('R$')) {
+                        if (target.includes('M')) {
+                            counter.innerText = `R$ ${(current/1000000).toFixed(1)}M`;
+                        } else {
+                            counter.innerText = `R$ ${Math.floor(current).toLocaleString()}`;
+                        }
+                    } else if (target.includes('%')) {
+                        counter.innerText = `${Math.floor(current)}%`;
+                    } else {
+                        counter.innerText = Math.floor(current).toLocaleString();
+                    }
+                }, 20);
+            });
+        }
+
+        // Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('stats')) {
+                        animateCounters();
+                    }
+                }
+            });
+        });
+
+        // Observe sections
+        document.addEventListener('DOMContentLoaded', () => {
+            observer.observe(document.querySelector('.stats'));
+            
+            // Add floating animation to CTA buttons
+            const ctaButtons = document.querySelectorAll('.cta-button, .cta-button-black');
+            ctaButtons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.style.transform = 'translateY(-5px) scale(1.05)';
+                });
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

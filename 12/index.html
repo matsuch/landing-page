@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Criativo - Soluções Gráficas e Web Design Profissional</title>
+    <meta name="description" content="Especialista em design gráfico e web design. Criamos identidades visuais, sites responsivos e materiais gráficos que convertem. Solicite seu orçamento gratuito!">
+    <meta name="keywords" content="design gráfico, web design, identidade visual, logo, site responsivo, material gráfico, designer profissional">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background: #ffffff;
+            --background-alt: #f8fafc;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--background);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 0;
+            background: var(--background-alt);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .product-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .product-cta:hover {
+            background: var(--secondary);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background: var(--background);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .testimonial-company {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 4rem 0;
+            background: var(--background-alt);
+            text-align: center;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .partner-logo {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 6rem 0;
+            background: var(--background);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                background: white;
+                width: 100%;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: start;
+                padding-top: 2rem;
+                transition: left 0.3s;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">DesignPro</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Transforme Sua Marca com Design Profissional</h1>
+                <p>Criamos identidades visuais marcantes e sites responsivos que convertem visitantes em clientes</p>
+                <a href="#contact" class="cta-button">Solicite Seu Orçamento Gratuito</a>
+            </div>
+        </section>
+
+        <section class="products" id="products">
+            <div class="container">
+                <h2 class="section-title">Nossos Produtos e Serviços</h2>
+                <div class="products-grid">
+                    <div class="product-card fade-in">
+                        <div class="product-image">🎨</div>
+                        <div class="product-content">
+                            <h3 class="product-title">Identidade Visual</h3>
+                            <p class="product-description">Criação de logos, paletas de cores, tipografia e manual de marca completo para fortalecer sua presença no mercado.</p>
+                            <a href="#contact" class="product-cta">Saiba Mais</a>
+                        </div>
+                    </div>
+                    <div class="product-card fade-in">
+                        <div class="product-image">💻</div>
+                        <div class="product-content">
+                            <h3 class="product-title">Web Design</h3>
+                            <p class="product-description">Desenvolvimento de sites responsivos, landing pages otimizadas e e-commerce que geram resultados reais.</p>
+                            <a href="#contact" class="product-cta">Saiba Mais</a>
+                        </div>
+                    </div>
+                    <div class="product-card fade-in">
+                        <div class="product-image">📱</div>
+                        <div class="product-content">
+                            <h3 class="product-title">Design Digital</h3>
+                            <p class="product-description">Criação de posts para redes sociais, banners, newsletters e materiais digitais que engajam seu público.</p>
+                            <a href="#contact" class="product-cta">Saiba Mais</a>
+                        </div>
+                    </div>
+                    <div class="product-card fade-in">
+                        <div class="product-image">📄</div>
+                        <div class="product-content">
+                            <h3 class="product-title">Material Gráfico</h3>
+                            <p class="product-description">Desenvolvimento de cartões de visita, folders, catálogos e materiais impressos de alta qualidade.</p>
+                            <a href="#contact" class="product-cta">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in">
+                        <p class="testimonial-text">"O trabalho da DesignPro superou todas as expectativas. Nossa nova identidade visual trouxe um aumento de 40% nas vendas."</p>
+                        <h4 class="testimonial-author">Maria Silva</h4>
+                        <p class="testimonial-company">CEO - TechStart</p>
+                    </div>
+                    <div class="testimonial-card fade-in">
+                        <p class="testimonial-text">"Profissionalismo e criatividade em cada projeto. Recomendo para qualquer empresa que busca resultado."</p>
+                        <h4 class="testimonial-author">João Santos</h4>
+                        <p class="testimonial-company">Diretor - ModaFashion</p>
+                    </div>
+                    <div class="testimonial-card fade-in">
+                        <p class="testimonial-text">"Site incrível e totalmente responsivo. Nossos clientes adoraram a nova experiência de navegação."</p>
+                        <h4 class="testimonial-author">Ana Costa</h4>
+                        <p class="testimonial-company">Gerente - BeautyStore</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container">
+                <h2 class="section-title">Empresas Parceiras</h2>
+                <div class="partners-grid">
+                    <div class="partner-logo">TechCorp</div>
+                    <div class="partner-logo">StartupHub</div>
+                    <div class="partner-logo">ModernBiz</div>
+                    <div class="partner-logo">InnovateCo</div>
+                    <div class="partner-logo">DigitalMax</div>
+                    <div class="partner-logo">CreativeStudio</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Vamos Conversar Sobre Seu Projeto</h2>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Nome *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem *</label>
+                        <textarea id="message" name="message" placeholder="Conte-nos sobre seu projeto e como podemos ajudar..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DesignPro</h3>
+                    <p>Transformando ideias em realidade através do design profissional e criativo.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: contato@designpro.com</p>
+                    <p>Telefone: (11) 9999-9999</p>
+                    <p>WhatsApp: (11) 9999-9999</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Siga-nos</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Behance">🎨</a>
+                        <a href="#" aria-label="WhatsApp">📱</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 DesignPro. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone') || 'Não informado';
+            const message = formData.get('message');
+            
+            // WhatsApp integration
+            const whatsappMessage = `Olá! Meu nome é ${name}. Email: ${email}. Telefone: ${phone}. Mensagem: ${message}`;
+            const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            // Show success message
+            alert('Obrigado pelo contato! Você será redirecionado para o WhatsApp para finalizar o atendimento.');
+            
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.product-card, .testimonial-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add floating WhatsApp button
+        const whatsappButton = document.createElement('div');
+        whatsappButton.innerHTML = '💬';
+        whatsappButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        `;
+        
+        whatsappButton.addEventListener('click', () => {
+            window.open('https://wa.me/5511999999999?text=Olá! Tenho interesse nos serviços de design.', '_blank');
+        });
+        
+        whatsappButton.addEventListener('mouseenter', () => {
+            whatsappButton.style.transform = 'scale(1.1)';
+        });
+        
+        whatsappButton.addEventListener('mouseleave', () => {
+            whatsappButton.style.transform = 'scale(1)';
+        });
+        
+        document.body.appendChild(whatsappButton);
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const navLinks = document.getElementById('nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
